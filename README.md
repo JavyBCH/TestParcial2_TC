@@ -1,7 +1,9 @@
 # Python Self-Test App (Topics 3–6)
 
 ## What it does
-- Uses a **large generated pool (~300 questions)** from `question_bank.py` (**no JSON fallback**).
+- Has **two banks** (no JSON fallback):
+  - **Labs** (~300): `question_bank.py`
+  - **Theory** (~300): `theory_bank.py`
 - By default, runs an **EXAM simulation**: **30 questions**, **70 minutes**, teacher scoring rules.
 - Supports **multi-answer** questions (explicitly marked) with input like `A,C`.
 - Allows leaving a question **blank** (press Enter).
@@ -24,6 +26,14 @@ python quiz.py
 ```
 
 Optional:
+- Choose what to test:
+
+```bash
+python quiz.py --bank labs
+python quiz.py --bank theory
+python quiz.py --bank both
+```
+
 - Practice mode (10 random, no timer):
 
 ```bash

@@ -8,14 +8,45 @@ from typing import Any
 from typing import Dict, List, Optional, Set, Tuple
 
 
-def _load_questions(path: str) -> List[dict]:
-    # We intentionally rely ONLY on the generated pool to avoid confusion about which file to edit.
-    from quiz_app.question_bank import get_questions  # type: ignore
+def _reindex_questions(questions: List[dict]) -> List[dict]:
+    for i, q in enumerate(questions, start=1):
+        q["id"] = i
+    return questions
 
-    qs = get_questions()
-    if not isinstance(qs, list) or len(qs) < 30:
-        raise ValueError("Generated question bank must return a list with at least 30 questions.")
-    return qs
+
+def _load_questions(bank: str) -> List[dict]:
+    bank = bank.lower().strip()
+
+    if bank == "labs":
+        from quiz_app.question_bank import get_questions as get_labs  # type: ignore
+
+        qs = get_labs()
+        if not isinstance(qs, list) or len(qs) < 30:
+            raise ValueError("Labs question bank must return a list with at least 30 questions.")
+        return qs
+
+    if bank == "theory":
+        from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
+
+        qs = get_theory()
+        if not isinstance(qs, list) or len(qs) < 30:
+            raise ValueError("Theory question bank must return a list with at least 30 questions.")
+        return qs
+
+    if bank == "both":
+        from quiz_app.question_bank import get_questions as get_labs  # type: ignore
+        from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
+
+        labs = get_labs()
+        theory = get_theory()
+        if not isinstance(labs, list) or not isinstance(theory, list):
+            raise ValueError("Banks must return lists.")
+        merged = list(labs) + list(theory)
+        if len(merged) < 30:
+            raise ValueError("Combined bank must have at least 30 questions.")
+        return _reindex_questions(merged)
+
+    raise ValueError("Invalid bank. Use: labs, theory, or both.")
 
 
 def _rotation_state_path(base_dir: str) -> str:
@@ -44,6 +75,7 @@ def _select_with_rotation(
     base_dir: str,
     rotate: bool,
     reset_rotation: bool,
+    rotation_key: str,
 ) -> List[dict]:
     if not rotate:
         quiz = list(questions)
@@ -58,7 +90,11 @@ def _select_with_rotation(
     else:
         state = _load_rotation_state(base_dir)
 
-    remaining = state.get("remaining_ids")
+    remaining_by_bank = state.get("remaining_by_bank")
+    if not isinstance(remaining_by_bank, dict):
+        remaining_by_bank = {}
+
+    remaining = remaining_by_bank.get(rotation_key)
     if not isinstance(remaining, list) or not remaining:
         remaining_ids = list(all_ids)
     else:
@@ -74,7 +110,8 @@ def _select_with_rotation(
     picked = rng.sample(remaining_ids, count)
     remaining_ids = [i for i in remaining_ids if i not in set(picked)]
 
-    _save_rotation_state(base_dir, {"remaining_ids": remaining_ids})
+    remaining_by_bank[rotation_key] = remaining_ids
+    _save_rotation_state(base_dir, {"remaining_by_bank": remaining_by_bank})
     return [id_to_q[i] for i in picked]
 
 
@@ -173,11 +210,11 @@ def main() -> int:
     ap.add_argument("--rotate", action="store_true", help="Rotate questions across runs (avoid repeats until pool cycles).")
     ap.add_argument("--no-rotate", action="store_true", help="Disable rotation across runs (pure random each run).")
     ap.add_argument("--reset-rotation", action="store_true", help="Reset rotation history (start a fresh cycle).")
+    ap.add_argument("--bank", choices=["labs", "theory", "both"], default="labs", help="Question bank to use.")
     args = ap.parse_args()
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    questions_path = os.path.join(base_dir, "questions.json")
-    questions = _load_questions(questions_path)
+    questions = _load_questions(args.bank)
 
     if len(questions) < 30:
         print("Question bank must have at least 30 questions.", file=sys.stderr)
@@ -201,13 +238,16 @@ def main() -> int:
         base_dir=base_dir,
         rotate=rotate,
         reset_rotation=bool(args.reset_rotation),
+        rotation_key=args.bank,
     )
 
-    print("=== Cybersecurity Quiz (Labs 3-6) ===")
+    print(f"=== Cybersecurity Quiz ({args.bank.upper()}) ===")
     if args.seed is not None:
         print(f"(seed={args.seed})")
     if exam_mode:
-        print(f"Mode: EXAM | Questions: {total} | Time limit: {args.minutes} min | Rotation: {'ON' if rotate else 'OFF'}")
+        print(
+            f"Mode: EXAM | Questions: {total} | Time limit: {args.minutes} min | Rotation: {'ON' if rotate else 'OFF'}"
+        )
         print("Scoring:")
         print("- Single-answer: +1 correct, -0.2 wrong, 0 blank")
         print("- Multi-answer (explicit): +1 only if exact; otherwise -0.3 per WRONG selection; 0 blank")
