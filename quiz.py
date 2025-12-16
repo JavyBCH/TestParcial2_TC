@@ -8,6 +8,18 @@ from typing import Any
 from typing import Dict, List, Optional, Set, Tuple
 
 
+def _import_ui():
+    # Works from project root (package) or inside quiz_app (local).
+    try:
+        from quiz_app.ui import C, color  # type: ignore
+
+        return C, color
+    except ModuleNotFoundError:
+        from ui import C, color  # type: ignore
+
+        return C, color
+
+
 def _reindex_questions(questions: List[dict]) -> List[dict]:
     for i, q in enumerate(questions, start=1):
         q["id"] = i
@@ -144,31 +156,38 @@ def _normalize_answer(raw: str) -> Set[str]:
 
 
 def _format_options(options: Dict[str, str]) -> str:
+    C, color = _import_ui()
     letters = sorted(options.keys())
     lines = []
     for k in letters:
-        lines.append(f"  {k}. {options[k]}")
+        kk = color(f"{k}.", C.CYAN, C.BOLD)
+        lines.append(f"  {kk} {options[k]}")
     return "\n".join(lines)
 
 
 def _ask_question(q: dict, idx: int, total: int, time_left_s: Optional[float]) -> Tuple[Set[str], Set[str], Set[str]]:
+    C, color = _import_ui()
     multi = bool(q.get("multi", False))
-    prompt_suffix = " [Multi-answer: select ALL that apply]" if multi else " [Single-answer]"
+    prompt_suffix = (
+        color(" [Multi-answer: select ALL that apply]", C.MAGENTA, C.BOLD)
+        if multi
+        else color(" [Single-answer]", C.MAGENTA, C.BOLD)
+    )
 
     print()
     if time_left_s is not None:
         mins = max(0, int(time_left_s // 60))
         secs = max(0, int(time_left_s % 60))
-        print(f"Time left: {mins:02d}:{secs:02d}")
-    print(f"Q{idx}/{total}{prompt_suffix}")
-    print(q["question"])
+        print(color(f"Time left: {mins:02d}:{secs:02d}", C.CYAN, C.BOLD))
+    print(color(f"Q{idx}/{total}", C.YELLOW, C.BOLD) + prompt_suffix)
+    print(color(str(q["question"]), C.BOLD))
     print(_format_options(q["options"]))
 
     valid = set(k.upper() for k in q["options"].keys())
     correct = set(x.upper() for x in q["correct"])
 
     while True:
-        raw = input("Your answer (Enter=skip, e.g. A or A,C): ").strip()
+        raw = input(color("Your answer", C.GREEN, C.BOLD) + " (Enter=skip, e.g. A or A,C): ").strip()
         if raw == "":
             return set(), correct, valid
         ans = _normalize_answer(raw)
@@ -177,10 +196,13 @@ def _ask_question(q: dict, idx: int, total: int, time_left_s: Optional[float]) -
             return set(), correct, valid
         if not ans.issubset(valid):
             bad = sorted(ans - valid)
-            print(f"Invalid option(s): {', '.join(bad)}. Valid: {', '.join(sorted(valid))}")
+            print(
+                color("Invalid option(s): ", C.RED, C.BOLD)
+                + f"{', '.join(bad)}. Valid: {', '.join(sorted(valid))}"
+            )
             continue
         if not multi and len(ans) != 1:
-            print("This is a single-answer question. Enter exactly one option (e.g., B).")
+            print(color("This is a single-answer question.", C.RED, C.BOLD) + " Enter exactly one option (e.g., B).")
             continue
         return ans, correct, valid
 
@@ -213,6 +235,7 @@ def _score_multi(selected: Set[str], correct: Set[str]) -> Tuple[float, int]:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
+    C, color = _import_ui()
     ap = argparse.ArgumentParser(description="Self-test quiz (Topics 3–6).")
     ap.add_argument("--practice", action="store_true", help="Practice mode: 10 random questions (no timer).")
     ap.add_argument("--exam", action="store_true", help="Exam mode: 30 questions, 70 minutes, teacher scoring (default).")
@@ -253,21 +276,24 @@ def main(argv: Optional[List[str]] = None) -> int:
         rotation_key=args.bank,
     )
 
-    print(f"=== Cybersecurity Quiz ({args.bank.upper()}) ===")
+    print(color(f"=== Cybersecurity Quiz ({args.bank.upper()}) ===", C.CYAN, C.BOLD))
     if args.seed is not None:
-        print(f"(seed={args.seed})")
+        print(color(f"(seed={args.seed})", C.DIM))
     if exam_mode:
         print(
             f"Mode: EXAM | Questions: {total} | Time limit: {args.minutes} min | Rotation: {'ON' if rotate else 'OFF'}"
         )
-        print("Scoring:")
-        print("- Single-answer: +1 correct, -0.2 wrong, 0 blank")
-        print("- Multi-answer (explicit): +1 only if exact; otherwise -0.3 per WRONG selection; 0 blank")
+        print(color("Scoring:", C.BOLD))
+        print(color("- Single-answer:", C.YELLOW, C.BOLD) + " +1 correct, -0.2 wrong, 0 blank")
+        print(
+            color("- Multi-answer (explicit):", C.YELLOW, C.BOLD)
+            + " +1 only if exact; otherwise -0.3 per WRONG selection; 0 blank"
+        )
         print()
-        print("Tip: press Enter to leave a question blank.")
+        print(color("Tip:", C.GREEN, C.BOLD) + " press Enter to leave a question blank.")
     else:
         print(f"Mode: PRACTICE | Questions: {total} | No timer | Rotation: {'ON' if rotate else 'OFF'}")
-        print("Scoring uses the same rules as the exam.")
+        print(color("Scoring uses the same rules as the exam.", C.DIM))
 
     start = time.monotonic()
     score = 0.0
@@ -281,7 +307,7 @@ def main(argv: Optional[List[str]] = None) -> int:
             left = time_limit_s - elapsed
             if left <= 0:
                 print()
-                print("=== Time is up. Auto-submitting. ===")
+                print(color("=== Time is up. Auto-submitting. ===", C.RED, C.BOLD))
                 break
         else:
             left = None
@@ -291,7 +317,7 @@ def main(argv: Optional[List[str]] = None) -> int:
 
         if not selected:
             skipped_count += 1
-            print("Blank (0 points).")
+            print(color("Blank", C.YELLOW, C.BOLD) + " (0 points).")
             continue
 
         if multi:
@@ -299,33 +325,44 @@ def main(argv: Optional[List[str]] = None) -> int:
             score += delta
             if delta == 1.0:
                 correct_count += 1
-                print("Correct. (+1)")
+                print(color("Correct.", C.GREEN, C.BOLD) + " (+1)")
             else:
                 wrong_count += 1
-                print(f"Incorrect. ({delta:+.1f}) | Correct: {','.join(sorted(correct))} | Wrong selections: {wrong_sel}")
+                print(
+                    color("Incorrect.", C.RED, C.BOLD)
+                    + f" ({delta:+.1f}) | Correct: {color(','.join(sorted(correct)), C.GREEN, C.BOLD)}"
+                    + f" | Wrong selections: {wrong_sel}"
+                )
         else:
             delta = _score_single(selected, correct)
             score += delta
             if delta == 1.0:
                 correct_count += 1
-                print("Correct. (+1)")
+                print(color("Correct.", C.GREEN, C.BOLD) + " (+1)")
             else:
                 wrong_count += 1
-                print(f"Incorrect. ({delta:+.1f}) | Correct: {','.join(sorted(correct))}")
+                print(
+                    color("Incorrect.", C.RED, C.BOLD)
+                    + f" ({delta:+.1f}) | Correct: {color(','.join(sorted(correct)), C.GREEN, C.BOLD)}"
+                )
 
         expl = q.get("explanation")
         if expl:
-            print(f"Note: {expl}")
+            print(color("Note:", C.BLUE, C.BOLD) + f" {expl}")
 
     print()
-    print("=== Result ===")
+    print(color("=== Result ===", C.CYAN, C.BOLD))
     if time_limit_s is not None:
         elapsed = min(time_limit_s, time.monotonic() - start)
         mins = int(elapsed // 60)
         secs = int(elapsed % 60)
-        print(f"Time used: {mins:02d}:{secs:02d}")
+        print(color(f"Time used: {mins:02d}:{secs:02d}", C.CYAN, C.BOLD))
     print(f"Answered: {correct_count + wrong_count} | Correct: {correct_count} | Wrong: {wrong_count} | Blank: {skipped_count}")
-    print(f"Total score: {score:.1f} / {float(total):.1f}")
+    total_line = f"Total score: {score:.1f} / {float(total):.1f}"
+    if score >= 0.6 * float(total):
+        print(color(total_line, C.GREEN, C.BOLD))
+    else:
+        print(color(total_line, C.YELLOW, C.BOLD))
     return 0
 
 
