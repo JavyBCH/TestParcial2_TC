@@ -1,7 +1,7 @@
 # Python Self-Test App (Topics 3–6)
 
 ## What it does
-- Has **two banks**:
+- Has **two banks** (no JSON fallback):
   - **Labs** (~300): `question_bank.py`
   - **Theory** (~300): `theory_bank.py`
 - By default, runs an **EXAM simulation**: **30 questions**, **70 minutes**, teacher scoring rules.
@@ -19,57 +19,64 @@
 ---
 
 ## How to run (PC)
-From this folder:
+Recommended (from the project root `Parcial2`):
 
 ```bash
-python quiz.py
+python -m quiz_app.quiz
 ```
 
 Optional:
 - Choose what to test:
 
 ```bash
-python quiz.py --bank labs
-python quiz.py --bank theory
-python quiz.py --bank both
+python -m quiz_app.quiz --bank labs
+python -m quiz_app.quiz --bank theory
+python -m quiz_app.quiz --bank both
 ```
 
 - Practice mode (10 random, no timer):
 
 ```bash
-python quiz.py --practice
+python -m quiz_app.quiz --practice
 ```
 
 - Fixed seed (repeatable random quiz):
 
 ```bash
-python quiz.py --seed 123
+python -m quiz_app.quiz --seed 123
 ```
 
 - Custom exam duration:
 
 ```bash
-python quiz.py --minutes 70
+python -m quiz_app.quiz --minutes 70
 ```
 
 - Rotation (avoid repeats across runs until pool cycles) is ON by default.
 - Reset rotation history:
 
 ```bash
-python quiz.py --reset-rotation
+python -m quiz_app.quiz --reset-rotation
 ```
 
 - Disable rotation (pure random each run):
 
 ```bash
-python quiz.py --no-rotate
+python -m quiz_app.quiz --no-rotate
 ```
 
 - Choose number of questions:
 
 ```bash
-python quiz.py --count 30
-python quiz.py --practice --count 20
+python -m quiz_app.quiz --count 30
+python -m quiz_app.quiz --practice --count 20
+```
+
+If you prefer running from inside `quiz_app`:
+
+```bash
+cd quiz_app
+python quiz.py --bank labs
 ```
 
 ---
@@ -79,6 +86,5 @@ Any Python runner works (examples: **Pydroid 3** on Android, or **Termux** with 
 1. Copy the `quiz_app` folder to your phone.
 2. Run:
    - `python quiz.py`
-
 
 

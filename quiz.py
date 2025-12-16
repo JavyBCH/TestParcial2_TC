@@ -18,7 +18,12 @@ def _load_questions(bank: str) -> List[dict]:
     bank = bank.lower().strip()
 
     if bank == "labs":
-        from quiz_app.question_bank import get_questions as get_labs  # type: ignore
+        try:
+            # Works when run from project root (package import)
+            from quiz_app.question_bank import get_questions as get_labs  # type: ignore
+        except ModuleNotFoundError:
+            # Works when run from inside quiz_app (local import)
+            from question_bank import get_questions as get_labs  # type: ignore
 
         qs = get_labs()
         if not isinstance(qs, list) or len(qs) < 30:
@@ -26,7 +31,10 @@ def _load_questions(bank: str) -> List[dict]:
         return qs
 
     if bank == "theory":
-        from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
+        try:
+            from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
+        except ModuleNotFoundError:
+            from theory_bank import get_questions as get_theory  # type: ignore
 
         qs = get_theory()
         if not isinstance(qs, list) or len(qs) < 30:
@@ -34,8 +42,12 @@ def _load_questions(bank: str) -> List[dict]:
         return qs
 
     if bank == "both":
-        from quiz_app.question_bank import get_questions as get_labs  # type: ignore
-        from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
+        try:
+            from quiz_app.question_bank import get_questions as get_labs  # type: ignore
+            from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
+        except ModuleNotFoundError:
+            from question_bank import get_questions as get_labs  # type: ignore
+            from theory_bank import get_questions as get_theory  # type: ignore
 
         labs = get_labs()
         theory = get_theory()
