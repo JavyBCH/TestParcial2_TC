@@ -9,6 +9,8 @@ Design goals:
 
 from __future__ import annotations
 
+import hashlib
+import random
 from typing import Dict, List
 
 
@@ -33,6 +35,41 @@ def _q(
         "correct": correct,
         "explanation": explanation,
     }
+
+
+def _stable_seed(s: str) -> int:
+    # Stable across runs (unlike Python's built-in hash()).
+    digest = hashlib.sha256(s.encode("utf-8")).digest()
+    return int.from_bytes(digest[:8], "big", signed=False)
+
+
+def _mcq_from_pool(
+    *,
+    qid: int,
+    topic: str,
+    prompt: str,
+    key: str,
+    correct_meaning: str,
+    pool: List[tuple],
+    explanation: str,
+) -> dict:
+    """
+    Build a 4-option MCQ where distractors are meanings from the same pool.
+    Deterministic per (topic/prompt/key) so the bank is stable.
+    """
+    rng = random.Random(_stable_seed(f"{topic}|{prompt}|{key}"))
+    other_meanings = [m for (k, m) in pool if m != correct_meaning]
+    distractors = rng.sample(other_meanings, k=3) if len(other_meanings) >= 3 else other_meanings
+    choices = [correct_meaning] + distractors
+    # Ensure we always have 4 choices; pad (rare) with generic but still plausible strings.
+    while len(choices) < 4:
+        choices.append("Service/version enumeration option (see nmap/sqlmap help)")
+    rng.shuffle(choices)
+
+    letters = ["A", "B", "C", "D"]
+    options = {letters[i]: choices[i] for i in range(4)}
+    correct_letter = letters[choices.index(correct_meaning)]
+    return _q(qid, topic, prompt, options, [correct_letter], explanation)
 
 
 def get_questions() -> List[dict]:
@@ -736,13 +773,14 @@ def get_questions() -> List[dict]:
                 if len(qs) >= target:
                     break
                 qs.append(
-                    _q(
-                        qid,
-                        topic,
-                        f"[Variant] Choose the correct meaning of {label} `{key}`:",
-                        {"A": meaning, "B": "Unrelated", "C": "Unrelated", "D": "Unrelated"},
-                        ["A"],
-                        "Variant question (same fact) for rotation practice.",
+                    _mcq_from_pool(
+                        qid=qid,
+                        topic=topic,
+                        key=str(key),
+                        prompt=f"[Variant] Choose the correct meaning of {label} `{key}`:",
+                        correct_meaning=meaning,
+                        pool=pool,
+                        explanation="Variant question (same fact) for rotation practice.",
                     )
                 )
                 qid += 1
