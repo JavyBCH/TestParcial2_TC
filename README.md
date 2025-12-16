@@ -1,7 +1,7 @@
 # Python Self-Test App (Topics 3–6)
 
 ## What it does
-- Has **two banks** (no JSON fallback):
+- Has **two banks**:
   - **Labs** (~300): `question_bank.py`
   - **Theory** (~300): `theory_bank.py`
 - By default, runs an **EXAM simulation**: **30 questions**, **70 minutes**, teacher scoring rules.
@@ -79,5 +79,6 @@ Any Python runner works (examples: **Pydroid 3** on Android, or **Termux** with 
 1. Copy the `quiz_app` folder to your phone.
 2. Run:
    - `python quiz.py`
+
 
 
