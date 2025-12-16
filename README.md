@@ -19,10 +19,10 @@
 ---
 
 ## How to run (PC)
-Recommended (from the project root `Parcial2`):
+Menu (recommended, no parameters):
 
 ```bash
-python -m quiz_app.quiz
+python -m quiz_app
 ```
 
 Optional:
@@ -76,7 +76,7 @@ If you prefer running from inside `quiz_app`:
 
 ```bash
 cd quiz_app
-python quiz.py --bank labs
+python main.py
 ```
 
 ---

@@ -212,7 +212,7 @@ def _score_multi(selected: Set[str], correct: Set[str]) -> Tuple[float, int]:
     return score, wrong_selected
 
 
-def main() -> int:
+def main(argv: Optional[List[str]] = None) -> int:
     ap = argparse.ArgumentParser(description="Self-test quiz (Topics 3–6).")
     ap.add_argument("--practice", action="store_true", help="Practice mode: 10 random questions (no timer).")
     ap.add_argument("--exam", action="store_true", help="Exam mode: 30 questions, 70 minutes, teacher scoring (default).")
@@ -223,7 +223,7 @@ def main() -> int:
     ap.add_argument("--no-rotate", action="store_true", help="Disable rotation across runs (pure random each run).")
     ap.add_argument("--reset-rotation", action="store_true", help="Reset rotation history (start a fresh cycle).")
     ap.add_argument("--bank", choices=["labs", "theory", "both"], default="labs", help="Question bank to use.")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
     questions = _load_questions(args.bank)
