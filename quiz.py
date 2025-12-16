@@ -20,6 +20,16 @@ def _import_ui():
         return C, color
 
 
+def _load_bank_json(bank_name: str) -> List[dict]:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(base_dir, "banks", f"{bank_name}.json")
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if not isinstance(data, list) or len(data) < 30:
+        raise ValueError(f"Bank file {path} must be a list with at least 30 questions.")
+    return data
+
+
 def _reindex_questions(questions: List[dict]) -> List[dict]:
     for i, q in enumerate(questions, start=1):
         q["id"] = i
@@ -30,42 +40,13 @@ def _load_questions(bank: str) -> List[dict]:
     bank = bank.lower().strip()
 
     if bank == "labs":
-        try:
-            # Works when run from project root (package import)
-            from quiz_app.question_bank import get_questions as get_labs  # type: ignore
-        except ModuleNotFoundError:
-            # Works when run from inside quiz_app (local import)
-            from question_bank import get_questions as get_labs  # type: ignore
-
-        qs = get_labs()
-        if not isinstance(qs, list) or len(qs) < 30:
-            raise ValueError("Labs question bank must return a list with at least 30 questions.")
-        return qs
+        return _load_bank_json("labs")
 
     if bank == "theory":
-        try:
-            from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
-        except ModuleNotFoundError:
-            from theory_bank import get_questions as get_theory  # type: ignore
-
-        qs = get_theory()
-        if not isinstance(qs, list) or len(qs) < 30:
-            raise ValueError("Theory question bank must return a list with at least 30 questions.")
-        return qs
+        return _load_bank_json("theory")
 
     if bank == "both":
-        try:
-            from quiz_app.question_bank import get_questions as get_labs  # type: ignore
-            from quiz_app.theory_bank import get_questions as get_theory  # type: ignore
-        except ModuleNotFoundError:
-            from question_bank import get_questions as get_labs  # type: ignore
-            from theory_bank import get_questions as get_theory  # type: ignore
-
-        labs = get_labs()
-        theory = get_theory()
-        if not isinstance(labs, list) or not isinstance(theory, list):
-            raise ValueError("Banks must return lists.")
-        merged = list(labs) + list(theory)
+        merged = _load_bank_json("labs") + _load_bank_json("theory")
         if len(merged) < 30:
             raise ValueError("Combined bank must have at least 30 questions.")
         return _reindex_questions(merged)

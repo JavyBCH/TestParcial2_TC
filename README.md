@@ -1,9 +1,9 @@
 # Python Self-Test App (Topics 3–6)
 
 ## What it does
-- Has **two banks** (no JSON fallback):
-  - **Labs** (~300): `question_bank.py`
-  - **Theory** (~300): `theory_bank.py`
+- Has **two banks** (hardcoded question files):
+  - **Labs** (~300): `banks/labs.json`
+  - **Theory** (~300): `banks/theory.json`
 - By default, runs an **EXAM simulation**: **30 questions**, **70 minutes**, teacher scoring rules.
 - Supports **multi-answer** questions (explicitly marked) with input like `A,C`.
 - Allows leaving a question **blank** (press Enter).
@@ -86,5 +86,13 @@ Any Python runner works (examples: **Pydroid 3** on Android, or **Termux** with 
 1. Copy the `quiz_app` folder to your phone.
 2. Run:
    - `python quiz.py`
+
+---
+
+## Editing / adding questions
+- Edit `quiz_app/banks/labs.json` and/or `quiz_app/banks/theory.json`.
+- Each question is an object with:
+  - `question`, `options` (A-D), `correct` (e.g. `["B"]`), `multi` (`true`/`false`), optional `explanation`
+- **Multi-answer** questions should say so in the `question` text and `correct` should include multiple letters (e.g. `["A","C"]`).
 
 

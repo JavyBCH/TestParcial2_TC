@@ -1,0 +1,4809 @@
+[
+  {
+    "id": 1,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE is best described as:",
+    "options": {
+      "A": "A taxonomy of weakness types (root causes)",
+      "B": "A web vulnerability scanner",
+      "C": "A publicly known vulnerability identifier/reference",
+      "D": "A cryptographic scoring system"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "Slides: CVE is a reference for publicly known vulnerabilities (MITRE/NVD)."
+  },
+  {
+    "id": 2,
+    "topic": "T3",
+    "multi": false,
+    "question": "CWE is best described as:",
+    "options": {
+      "A": "A taxonomy/classification of weakness types",
+      "B": "A proxy scanner tool",
+      "C": "A probability of exploitation (0..1)",
+      "D": "A list of individual vulnerabilities"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "Slides: CWE is a taxonomy of weakness categories (e.g., CWE Top 25)."
+  },
+  {
+    "id": 3,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS v3.1 metric groups are:",
+    "options": {
+      "A": "Threat, Supplemental, Environmental",
+      "B": "C, I, A only",
+      "C": "Base, Temporal, Environmental",
+      "D": "Likelihood, Impact, Exposure"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "Slides: CVSS v3.1 groups are Base/Temporal/Environmental."
+  },
+  {
+    "id": 4,
+    "topic": "T3",
+    "multi": false,
+    "question": "EPSS is:",
+    "options": {
+      "A": "A probability estimate (0..1) of exploitation likelihood",
+      "B": "A database of exploits like Searchsploit",
+      "C": "A Windows authentication protocol",
+      "D": "A replacement for CVSS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "Slides: EPSS is a FIRST-managed ML probability model; it does not replace CVSS."
+  },
+  {
+    "id": 5,
+    "topic": "T3",
+    "multi": false,
+    "question": "Searchsploit is primarily used for:",
+    "options": {
+      "A": "Offline exploit database search (Exploit-DB mirror)",
+      "B": "Generating DNSSEC signatures",
+      "C": "Disabling UAC prompts",
+      "D": "Creating Kerberos tickets"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "From the Vulnerability Analysis tools slide."
+  },
+  {
+    "id": 6,
+    "topic": "T3",
+    "multi": false,
+    "question": "Nmap NSE/Vulscan is primarily used for:",
+    "options": {
+      "A": "Generating DNSSEC signatures",
+      "B": "Disabling UAC prompts",
+      "C": "Nmap scripting for vulnerability checks",
+      "D": "Creating Kerberos tickets"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "From the Vulnerability Analysis tools slide."
+  },
+  {
+    "id": 7,
+    "topic": "T3",
+    "multi": false,
+    "question": "Metasploit is primarily used for:",
+    "options": {
+      "A": "Disabling UAC prompts",
+      "B": "Framework with exploit/payload/post modules",
+      "C": "Creating Kerberos tickets",
+      "D": "Generating DNSSEC signatures"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": "From the Vulnerability Analysis tools slide."
+  },
+  {
+    "id": 8,
+    "topic": "T3",
+    "multi": false,
+    "question": "Nessus Essentials is primarily used for:",
+    "options": {
+      "A": "Disabling UAC prompts",
+      "B": "Vulnerability scanner (expect false positives/negatives)",
+      "C": "Creating Kerberos tickets",
+      "D": "Generating DNSSEC signatures"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": "From the Vulnerability Analysis tools slide."
+  },
+  {
+    "id": 9,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "Why do web scanners need manual crawling help before scanning?",
+    "options": {
+      "A": "Because cookies are forbidden by HTTP",
+      "B": "Because HTTPS cannot be proxied",
+      "C": "They cannot see HTML at all",
+      "D": "Logins and JS challenges can block automatic spidering; manual crawl seeds requests"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": "Slides: manually crawl before scanning; scanners use captured request/response logs."
+  },
+  {
+    "id": 10,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "Fuzzing is best described as:",
+    "options": {
+      "A": "Brute forcing DNSSEC keys",
+      "B": "Dumping SAM hashes from Windows",
+      "C": "Replacing HREF links in a browser",
+      "D": "Submitting lots of invalid/unexpected data to a target to find issues"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": "Slides: fuzzing submits many invalid/unexpected inputs."
+  },
+  {
+    "id": 11,
+    "topic": "T3.2",
+    "multi": true,
+    "question": "This question has MORE THAN ONE correct answer: XSS types discussed include: (Select ALL that apply)",
+    "options": {
+      "A": "Reflected",
+      "B": "DOM-XSS",
+      "C": "ARP-XSS",
+      "D": "Stored/Persistent"
+    },
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "Slides: reflected, stored, and DOM XSS."
+  },
+  {
+    "id": 12,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "Broken Access Control is summarized in the slides as:",
+    "options": {
+      "A": "AUTH != AUTHZ (who is? vs what can do?)",
+      "B": "Only detectable by automatic scanners",
+      "C": "Solved by enabling Flash",
+      "D": "AUTH == AUTHZ"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "Slides: AUTH != AUTHZ and it’s hard to scan automatically."
+  },
+  {
+    "id": 13,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "CSRF prerequisites listed include:",
+    "options": {
+      "A": "User already authenticated (cookie/basic auth) and action has no unpredictable random token",
+      "B": "Victim must be offline",
+      "C": "TLS must be disabled",
+      "D": "Only works on WebSockets"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "Slides: cookie/basic auth session + predictable parameters/no strong random token."
+  },
+  {
+    "id": 14,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --dbs do?",
+    "options": {
+      "A": "Display database names",
+      "B": "Send parameters in request body",
+      "C": "Retrieve current DB user",
+      "D": "Check DBA privileges"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 15,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --tables do?",
+    "options": {
+      "A": "List tables for selected DB (-D)",
+      "B": "Extract data",
+      "C": "Display database names",
+      "D": "List columns for table (-D, -T)"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 16,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --columns do?",
+    "options": {
+      "A": "Force POST method",
+      "B": "Non-interactive (accept defaults)",
+      "C": "Retrieve current DB user",
+      "D": "List columns for table (-D, -T)"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 17,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --dump do?",
+    "options": {
+      "A": "Retrieve current DB user",
+      "B": "Check DBA privileges",
+      "C": "List tables for selected DB (-D)",
+      "D": "Extract data"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 18,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --current-user do?",
+    "options": {
+      "A": "Display database names",
+      "B": "Check DBA privileges",
+      "C": "Retrieve current DB user",
+      "D": "Send parameters in request body"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 19,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --is-dba do?",
+    "options": {
+      "A": "Display database names",
+      "B": "Check DBA privileges",
+      "C": "Non-interactive (accept defaults)",
+      "D": "Force POST method"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 20,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --method=POST do?",
+    "options": {
+      "A": "Display database names",
+      "B": "Retrieve current DB user",
+      "C": "Check DBA privileges",
+      "D": "Force POST method"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 21,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --data do?",
+    "options": {
+      "A": "Extract data",
+      "B": "List columns for table (-D, -T)",
+      "C": "Display database names",
+      "D": "Send parameters in request body"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 22,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "In sqlmap, what does --batch do?",
+    "options": {
+      "A": "Non-interactive (accept defaults)",
+      "B": "List columns for table (-D, -T)",
+      "C": "Check DBA privileges",
+      "D": "Retrieve current DB user"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 23,
+    "topic": "T4",
+    "multi": true,
+    "question": "Metasploit module categories include:",
+    "options": {
+      "A": "Exploit",
+      "B": "Payloads",
+      "C": "Post",
+      "D": "Auxiliary"
+    },
+    "correct": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "Slides list Exploit/Auxiliary/Payloads/Post."
+  },
+  {
+    "id": 24,
+    "topic": "T4",
+    "multi": false,
+    "question": "Staged payloads are best described as:",
+    "options": {
+      "A": "Payloads that never use the network",
+      "B": "Only used for DNS attacks",
+      "C": "Single large payload sent once",
+      "D": "Small stager first, then full payload loaded over a follow-up connection"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": "Slides: staged payload uses a stager then loads full payload."
+  },
+  {
+    "id": 25,
+    "topic": "T4",
+    "multi": false,
+    "question": "Reverse payloads are often preferred when:",
+    "options": {
+      "A": "Attacker cannot listen on ports",
+      "B": "You want the victim to listen for inbound connections",
+      "C": "You want no network traffic",
+      "D": "Victim is behind NAT/firewall restricting inbound connections"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": "Slides: reverse payload helps when inbound to target is hard (NAT/firewall)."
+  },
+  {
+    "id": 26,
+    "topic": "T4",
+    "multi": false,
+    "question": "Which statement best matches: DNS rebinding?",
+    "options": {
+      "A": "A Windows UAC bypass",
+      "B": "A browser hook framework",
+      "C": "A SQLi automation tool",
+      "D": "Mitigated by DNS pinning (as noted)"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": "From the DNS attacks/security slides."
+  },
+  {
+    "id": 27,
+    "topic": "T4",
+    "multi": false,
+    "question": "Which statement best matches: Kaminsky attack?",
+    "options": {
+      "A": "A SQLi automation tool",
+      "B": "A Windows UAC bypass",
+      "C": "Flooding source ports/XIDs; randomization as patch",
+      "D": "A browser hook framework"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "From the DNS attacks/security slides."
+  },
+  {
+    "id": 28,
+    "topic": "T4",
+    "multi": false,
+    "question": "Which statement best matches: DNSSEC?",
+    "options": {
+      "A": "A SQLi automation tool",
+      "B": "A Windows UAC bypass",
+      "C": "PKI-based signing/validation to secure DNS",
+      "D": "A browser hook framework"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "From the DNS attacks/security slides."
+  },
+  {
+    "id": 29,
+    "topic": "T4",
+    "multi": false,
+    "question": "DoS characteristic: Asymmetry",
+    "options": {
+      "A": "Attacker cost < victim cost (e.g., SYN flood)",
+      "B": "A PE injection technique",
+      "C": "A Kerberos actor",
+      "D": "A CSRF prerequisite"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "From DoS characteristics slide."
+  },
+  {
+    "id": 30,
+    "topic": "T4",
+    "multi": false,
+    "question": "DoS characteristic: Amplification",
+    "options": {
+      "A": "A Kerberos actor",
+      "B": "A PE injection technique",
+      "C": "A CSRF prerequisite",
+      "D": "Answer much larger than query (BAF)"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": "From DoS characteristics slide."
+  },
+  {
+    "id": 31,
+    "topic": "T4",
+    "multi": false,
+    "question": "DoS characteristic: Reflection",
+    "options": {
+      "A": "A Kerberos actor",
+      "B": "A PE injection technique",
+      "C": "Use third parties as reflectors",
+      "D": "A CSRF prerequisite"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "From DoS characteristics slide."
+  },
+  {
+    "id": 32,
+    "topic": "T4",
+    "multi": false,
+    "question": "DoS characteristic: Distribution",
+    "options": {
+      "A": "Attack from many machines (DDoS/botnet)",
+      "B": "A PE injection technique",
+      "C": "A Kerberos actor",
+      "D": "A CSRF prerequisite"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": "From DoS characteristics slide."
+  },
+  {
+    "id": 33,
+    "topic": "T5",
+    "multi": false,
+    "question": "WinPEAS is best described as:",
+    "options": {
+      "A": "A DNS cache poisoning tool",
+      "B": "A browser exploitation framework",
+      "C": "A tool to search for privilege escalation paths on Windows hosts",
+      "D": "A SQL injection proxy"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "Slides: WinPEAS searches for possible privilege escalation paths on Windows."
+  },
+  {
+    "id": 34,
+    "topic": "T5",
+    "multi": true,
+    "question": "This question has MORE THAN ONE correct answer: Common Windows UAC bypass techniques listed include: (Select ALL that apply)",
+    "options": {
+      "A": "DLL hijacking",
+      "B": "Registry manipulation",
+      "C": "Scheduled tasks",
+      "D": "DNSSEC signing"
+    },
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "Slides list DLL hijacking, registry manipulation, scheduled tasks."
+  },
+  {
+    "id": 35,
+    "topic": "T5",
+    "multi": false,
+    "question": "Kiwi is:",
+    "options": {
+      "A": "A ZAP fuzzing module",
+      "B": "A DNS amplification protocol",
+      "C": "Integrated mimikatz evolution inside meterpreter",
+      "D": "A DVWA version"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": "Slides: kiwi is integrated in meterpreter and related to mimikatz."
+  },
+  {
+    "id": 36,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 37,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 38,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..10",
+      "C": "0..1",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 39,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 40,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 41,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "Crypto failures",
+      "C": "Broken Access Control",
+      "D": "DoS"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 42,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Interact with session n",
+      "C": "Generate CVE",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 43,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Dump SAM hashes",
+      "B": "Start ZAP",
+      "C": "Interact with session n",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 44,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 45,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Using legitimate native tools for malicious activities",
+      "C": "Only using DNS attacks",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 46,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 47,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..10",
+      "C": "0..1",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 48,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "DoS",
+      "B": "Broken Access Control",
+      "C": "Crypto failures",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 49,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Interact with session n",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 50,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Only using kernel exploits",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 51,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 52,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "1..5"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 53,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 54,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Start ZAP",
+      "C": "Dump SAM hashes",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 55,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Only using kernel exploits",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 56,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 57,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "0..100"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 58,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 59,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Start ZAP",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 60,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 61,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 62,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "1..5"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 63,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "Crypto failures",
+      "D": "DoS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 64,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 65,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 66,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 67,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 68,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 69,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 70,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 71,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 72,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 73,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 74,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Interact with session n",
+      "C": "Generate CVE",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 75,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 76,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "EPSS-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 77,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 78,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 79,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Dump SAM hashes",
+      "B": "Start ZAP",
+      "C": "Interact with session n",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 80,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 81,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 82,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..100",
+      "C": "0..10",
+      "D": "0..1"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 83,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "Crypto failures",
+      "C": "SQL injection",
+      "D": "DoS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 84,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Generate CVE",
+      "B": "Interact with session n",
+      "C": "Start ZAP",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 85,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 86,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 87,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..100",
+      "C": "1..5",
+      "D": "0..1"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 88,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 89,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Interact with session n",
+      "C": "Generate CVE",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 90,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 91,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 92,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..100",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 93,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 94,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Interact with session n",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 95,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 96,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 97,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..100",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 98,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 99,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Interact with session n",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 100,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Only using kernel exploits",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 101,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVSS-YYYY-NNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 102,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..1",
+      "B": "0..10",
+      "C": "0..100",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 103,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 104,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Interact with session n",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 105,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 106,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 107,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "0..100"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 108,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 109,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 110,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Only using custom malware",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 111,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 112,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "1..5",
+      "C": "0..100",
+      "D": "0..1"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 113,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "Crypto failures",
+      "D": "DoS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 114,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Dump SAM hashes",
+      "B": "Generate CVE",
+      "C": "Start ZAP",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 115,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 116,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 117,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 118,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 119,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 120,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Using legitimate native tools for malicious activities",
+      "C": "Only using DNS attacks",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 121,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 122,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "0..100"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 123,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 124,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 125,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 126,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 127,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..100",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 128,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 129,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Generate CVE",
+      "B": "Interact with session n",
+      "C": "Start ZAP",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 130,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using DNS attacks",
+      "B": "Using legitimate native tools for malicious activities",
+      "C": "Only using custom malware",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 131,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 132,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..10",
+      "C": "0..1",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 133,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 134,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 135,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Using legitimate native tools for malicious activities",
+      "C": "Only using DNS attacks",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 136,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 137,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 138,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 139,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Generate CVE",
+      "B": "Interact with session n",
+      "C": "Start ZAP",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 140,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 141,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 142,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..100",
+      "C": "1..5",
+      "D": "0..1"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 143,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Crypto failures",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 144,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 145,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 146,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "EPSS-YYYY-NNNNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 147,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..100",
+      "C": "0..10",
+      "D": "0..1"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 148,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 149,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 150,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 151,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 152,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..1",
+      "B": "0..10",
+      "C": "0..100",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 153,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "DoS",
+      "B": "Broken Access Control",
+      "C": "Crypto failures",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 154,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Interact with session n",
+      "C": "Generate CVE",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 155,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Only using kernel exploits",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 156,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 157,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..100",
+      "C": "1..5",
+      "D": "0..1"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 158,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "Crypto failures",
+      "C": "Broken Access Control",
+      "D": "DoS"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 159,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Interact with session n",
+      "C": "Generate CVE",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 160,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Using legitimate native tools for malicious activities",
+      "C": "Only using DNS attacks",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 161,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 162,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 163,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 164,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 165,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 166,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "EPSS-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 167,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 168,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 169,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 170,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 171,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 172,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 173,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "Crypto failures",
+      "C": "SQL injection",
+      "D": "DoS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 174,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 175,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 176,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 177,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..10",
+      "C": "0..1",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 178,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "Crypto failures",
+      "C": "SQL injection",
+      "D": "DoS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 179,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Generate CVE",
+      "B": "Interact with session n",
+      "C": "Start ZAP",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 180,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using kernel exploits",
+      "C": "Only using custom malware",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 181,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 182,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..10",
+      "C": "0..1",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 183,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 184,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 185,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 186,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 187,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..100",
+      "C": "1..5",
+      "D": "0..1"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 188,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 189,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 190,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 191,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 192,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "0..100"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 193,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "Crypto failures",
+      "C": "Broken Access Control",
+      "D": "DoS"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 194,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Start ZAP",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 195,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using kernel exploits",
+      "C": "Only using custom malware",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 196,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVSS-YYYY-NNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 197,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "0..100"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 198,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 199,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Start ZAP",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 200,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 201,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 202,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 203,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 204,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Dump SAM hashes",
+      "B": "Start ZAP",
+      "C": "Interact with session n",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 205,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 206,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 207,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "0..100"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 208,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "Broken Access Control",
+      "C": "DoS",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 209,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 210,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 211,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 212,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 213,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 214,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 215,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 216,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 217,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "1..5"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 218,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 219,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Generate CVE",
+      "B": "Interact with session n",
+      "C": "Start ZAP",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 220,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using DNS attacks",
+      "C": "Only using kernel exploits",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 221,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 222,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 223,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "Crypto failures",
+      "C": "SQL injection",
+      "D": "DoS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 224,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 225,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 226,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "EPSS-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 227,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..100",
+      "C": "0..10",
+      "D": "0..1"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 228,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 229,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 230,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using custom malware",
+      "C": "Only using kernel exploits",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 231,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 232,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..100",
+      "C": "1..5",
+      "D": "0..1"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 233,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Crypto failures",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 234,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 235,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using custom malware",
+      "C": "Only using kernel exploits",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 236,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 237,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 238,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 239,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Start ZAP",
+      "C": "Dump SAM hashes",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 240,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using custom malware",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 241,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVSS-YYYY-NNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 242,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..10",
+      "C": "0..1",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 243,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "Crypto failures",
+      "D": "DoS"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 244,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Generate CVE",
+      "C": "Interact with session n",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 245,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 246,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 247,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..100",
+      "C": "0..10",
+      "D": "0..1"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 248,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 249,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Generate CVE",
+      "C": "Dump SAM hashes",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 250,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 251,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "CVE-YYYY-NNNNN"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 252,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 253,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 254,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Interact with session n",
+      "C": "Generate CVE",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 255,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 256,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 257,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..1",
+      "C": "1..5",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 258,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 259,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 260,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using DNS attacks",
+      "B": "Using legitimate native tools for malicious activities",
+      "C": "Only using custom malware",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 261,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CVSS-YYYY-NNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 262,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..10",
+      "C": "0..1",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 263,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "Crypto failures",
+      "C": "Broken Access Control",
+      "D": "DoS"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 264,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Dump SAM hashes",
+      "B": "Generate CVE",
+      "C": "Interact with session n",
+      "D": "Start ZAP"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 265,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using DNS attacks",
+      "B": "Using legitimate native tools for malicious activities",
+      "C": "Only using custom malware",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 266,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "EPSS-YYYY-NNNNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 267,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..1",
+      "B": "0..10",
+      "C": "0..100",
+      "D": "1..5"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 268,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "Broken Access Control",
+      "C": "DoS",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 269,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Generate CVE",
+      "B": "Interact with session n",
+      "C": "Start ZAP",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 270,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using custom malware"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 271,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "EPSS-YYYY-NNNNN",
+      "B": "CWE-YYYY-NNNNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 272,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "0..1",
+      "C": "0..10",
+      "D": "1..5"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 273,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 274,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Start ZAP",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 275,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using kernel exploits",
+      "B": "Only using DNS attacks",
+      "C": "Only using custom malware",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 276,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "EPSS-YYYY-NNNNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "CVSS-YYYY-NNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 277,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 278,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Broken Access Control",
+      "B": "SQL injection",
+      "C": "DoS",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 279,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Start ZAP",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 280,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Using legitimate native tools for malicious activities",
+      "D": "Only using kernel exploits"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 281,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "EPSS-YYYY-NNNNN",
+      "D": "CWE-YYYY-NNNNN"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 282,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..100",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 283,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "Crypto failures",
+      "B": "DoS",
+      "C": "SQL injection",
+      "D": "Broken Access Control"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 284,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Interact with session n",
+      "B": "Dump SAM hashes",
+      "C": "Start ZAP",
+      "D": "Generate CVE"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 285,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 286,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 287,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "0..100",
+      "C": "1..5",
+      "D": "0..1"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 288,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "DoS",
+      "C": "Broken Access Control",
+      "D": "Crypto failures"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 289,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Generate CVE",
+      "B": "Interact with session n",
+      "C": "Start ZAP",
+      "D": "Dump SAM hashes"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 290,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using DNS attacks",
+      "C": "Only using kernel exploits",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 291,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CVSS-YYYY-NNN",
+      "B": "CVE-YYYY-NNNNN",
+      "C": "CWE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 292,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "0..10",
+      "B": "1..5",
+      "C": "0..1",
+      "D": "0..100"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 293,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "DoS",
+      "B": "Broken Access Control",
+      "C": "Crypto failures",
+      "D": "SQL injection"
+    },
+    "correct": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 294,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Dump SAM hashes",
+      "B": "Generate CVE",
+      "C": "Start ZAP",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 295,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Using legitimate native tools for malicious activities",
+      "B": "Only using kernel exploits",
+      "C": "Only using custom malware",
+      "D": "Only using DNS attacks"
+    },
+    "correct": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 296,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVE format is:",
+    "options": {
+      "A": "CWE-YYYY-NNNNN",
+      "B": "CVSS-YYYY-NNN",
+      "C": "CVE-YYYY-NNNNN",
+      "D": "EPSS-YYYY-NNNNN"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 297,
+    "topic": "T3",
+    "multi": false,
+    "question": "CVSS scores range from:",
+    "options": {
+      "A": "1..5",
+      "B": "0..1",
+      "C": "0..100",
+      "D": "0..10"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 298,
+    "topic": "T3.2",
+    "multi": false,
+    "question": "AUTH != AUTHZ refers to:",
+    "options": {
+      "A": "SQL injection",
+      "B": "Crypto failures",
+      "C": "Broken Access Control",
+      "D": "DoS"
+    },
+    "correct": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 299,
+    "topic": "T4",
+    "multi": false,
+    "question": "Metasploit 'sessions -i <n>' is used to:",
+    "options": {
+      "A": "Start ZAP",
+      "B": "Dump SAM hashes",
+      "C": "Generate CVE",
+      "D": "Interact with session n"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 300,
+    "topic": "T5",
+    "multi": false,
+    "question": "Living off the Land (LotL) means:",
+    "options": {
+      "A": "Only using custom malware",
+      "B": "Only using kernel exploits",
+      "C": "Only using DNS attacks",
+      "D": "Using legitimate native tools for malicious activities"
+    },
+    "correct": [
+      "D"
+    ],
+    "explanation": ""
+  }
+]
